@@ -1,8 +1,7 @@
-import "./Home.css";
 
 function Home() {
   return (
-    <div className="app-container">
+    <div className="text-red-500">
       <h1>Nutra</h1>
     </div>
   );
