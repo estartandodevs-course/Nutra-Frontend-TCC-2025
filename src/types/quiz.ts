@@ -6,6 +6,7 @@ export interface Question {
   type?: string
   options?: string[]
 }
+
 export interface ProgressBarProps {
   current: number
   total: number
@@ -29,9 +30,8 @@ export interface QuizModalProps {
   onSelectAnswer: (questionId: number, answerIndex: number) => void
   onNext: () => void
   onBack: () => void
-  onRestart: () => void
-  showResult: boolean
 }
+
 
 export interface ResultModalProps {
   answers: Record<number, number>
