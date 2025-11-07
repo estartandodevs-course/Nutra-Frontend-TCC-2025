@@ -44,49 +44,29 @@ const quizData = [
     emoji: "🧘",
     options: ["Muito alto", "Alto", "Moderado", "Baixo"],
   },
-  {
-    id: 6,
-    question: "Qual é sua principal motivação?",
-    emoji: "🎯",
-    options: [
-      "Saúde física",
-      "Saúde mental",
-      "Aparência",
-      "Disposição no dia a dia",
-    ],
-  },
 ];
 
 export default function QuizPage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
-  const [showResult, setShowResult] = useState(false);
 
-  const handleSelectAnswer = (questionId: number, answerIndex: number) => {
+  const handleSelecionaResposta = (questaoId: number, respostaIndex: number) => {
     setAnswers((prev) => ({
       ...prev,
-      [questionId]: answerIndex,
+      [questaoId]: respostaIndex,
     }));
   };
 
-  const handleNext = () => {
+  const handleSeguinte = () => {
     if (currentStep < quizData.length - 1) {
       setCurrentStep(currentStep + 1);
-    } else {
-      setShowResult(true);
     }
   };
 
-  const handleBack = () => {
+  const handleVolta = () => {
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1);
     }
-  };
-
-  const handleRestart = () => {
-    setCurrentStep(0);
-    setAnswers({});
-    setShowResult(false);
   };
 
   const currentQuestion = quizData[currentStep];
@@ -99,11 +79,9 @@ export default function QuizPage() {
           questionNumber={currentStep + 1}
           totalQuestions={quizData.length}
           answers={answers}
-          onSelectAnswer={handleSelectAnswer}
-          onNext={handleNext}
-          onBack={handleBack}
-          onRestart={handleRestart}
-          showResult={showResult}
+          onSelectAnswer={handleSelecionaResposta}
+          onNext={handleSeguinte}
+          onBack={handleVolta}
         />
       </section>
     </Wrapper>

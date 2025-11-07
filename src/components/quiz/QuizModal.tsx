@@ -1,7 +1,5 @@
-import QuestionModal from "./QuestionModal"
-import type { QuizModalProps } from "../../types/quiz"
-import ResultModal from "./ResultModal"
-
+import QuestionModal from "./QuestionModal";
+import type { QuizModalProps } from "../../types/quiz";
 
 export default function QuizModal({
   question,
@@ -11,13 +9,7 @@ export default function QuizModal({
   onSelectAnswer,
   onNext,
   onBack,
-  onRestart,
-  showResult,
 }: QuizModalProps) {
-  if (showResult) {
-    return <ResultModal answers={answers} onRestart={onRestart} totalQuestions={totalQuestions} />
-  }
-
   return (
     <QuestionModal
       question={question}
@@ -28,5 +20,5 @@ export default function QuizModal({
       onNext={onNext}
       onBack={onBack}
     />
-  )
+  );
 }

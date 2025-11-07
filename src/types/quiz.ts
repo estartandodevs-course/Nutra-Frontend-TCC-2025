@@ -20,3 +20,21 @@ export interface QuestionModalProps {
   onNext: () => void
   onBack: () => void
 }
+
+export interface QuizModalProps {
+  question: Question
+  questionNumber: number
+  totalQuestions: number
+  answers: Record<number, number>
+  onSelectAnswer: (questionId: number, answerIndex: number) => void
+  onNext: () => void
+  onBack: () => void
+  onRestart: () => void
+  showResult: boolean
+}
+
+export interface ResultModalProps {
+  answers: Record<number, number>
+  onRestart: () => void
+  totalQuestions: number
+}

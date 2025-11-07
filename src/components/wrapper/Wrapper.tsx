@@ -1,8 +1,4 @@
-import React from "react";
-interface WrapperProps {
-  children: React.ReactNode;
-  className?: string;
-}
+import type { WrapperProps } from "../../types/wrapper";
 
 export default function Wrapper({ children, className = "" }: WrapperProps) {
   return (
