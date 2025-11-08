@@ -6,12 +6,10 @@ export default function Wrapper({ children, className = "" }: WrapperProps) {
       className={`
         mx-auto
         w-full max-w-full
-        sm:w-[375px] sm:h-[667px]    
+        sm:w-[375px] sm:h-[667px]
         min-h-screen
-        bg-gray-50
         p-4
-        rounded-none sm:rounded-3xl
-        shadow-none sm:shadow-xl
+        shadow-none
         overflow-hidden
         flex flex-col
         ${className}
