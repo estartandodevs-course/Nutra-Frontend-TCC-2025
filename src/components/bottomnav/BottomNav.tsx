@@ -1,4 +1,4 @@
-import { Home, Search, ShoppingCart, Heart, User } from "lucide-react"
+import { Home, Search, Leaf, Heart, User } from "lucide-react"
 
 export default function BottomNav() {
   return (
@@ -11,7 +11,7 @@ export default function BottomNav() {
           <Search size={24} />
         </button>
         <button className="flex flex-col items-center justify-center w-16 h-16 text-white hover:bg-orange-600 transition">
-          <ShoppingCart size={24} />
+          <Leaf size={24} />
         </button>
         <button className="flex flex-col items-center justify-center w-16 h-16 text-white hover:bg-orange-600 transition">
           <Heart size={24} />
