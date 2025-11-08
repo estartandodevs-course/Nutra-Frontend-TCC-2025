@@ -1,11 +1,11 @@
-import Header from "../../components/header/Header"
-import DailyChallenge from "../../components/dailychallenge/DailyChallenge"
-import VideoSection from "../../components/videosection/VideoSection"
-import GamesSection from "../../components/gamessection/GamesSection"
-import RecipesSection from "../../components/recipes/RecipesSection"
-import ExperimentsSection from "../../components/experimentsection/ExperimentSection"
-import BottomNav from "../../components/bottomnav/BottomNav"
-import Wrapper from "../../components/wrapper/Wrapper"
+import Header from "../../components/dashboard/Header"
+import DailyChallenge from "../../components/dashboard/DailyChallenge"
+import VideoSection from "../../components/dashboard/VideoSection"
+import GamesSection from "../../components/dashboard/GamesSection"
+import RecipesSection from "../../components/dashboard/RecipesSection"
+import ExperimentsSection from "../../components/dashboard/ExperimentSection"
+import BottomNav from "../../components/general/BottomNav"
+import Wrapper from "../../components/general/Wrapper"
 
 export default function Home() {
   return (
