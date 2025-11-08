@@ -1,11 +1,11 @@
 import { useState } from "react"
 import Wrapper from "../../components/wrapper/Wrapper"
-import HeaderAchievement from "../../components/headerachievement/HeaderAchievement"
-import UserProfileAchievement from "../../components/userprofileachievement/UserProfileAchievement"
-import Achievement from "../../components/achievement/Achievement"
-import Rankings from "../../components/ranking/Ranking"
+import HeaderAchievement from "../../components/milestones/HeaderAchievement"
+import UserProfileAchievement from "../../components/milestones/UserProfileAchievement"
+import Achievement from "../../components/milestones/Achievement"
+import Rankings from "../../components/milestones/Ranking"
 import BottomNav from "../../components/bottomnav/BottomNav"
-import Tabs from "../../components/tabs/Tabs"
+import Tabs from "../../components/milestones/Tabs"
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"progress" | "achievements">("achievements")
