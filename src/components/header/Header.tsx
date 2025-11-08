@@ -8,7 +8,7 @@ export default function Header() {
           
           <div className="w-10 h-10 rounded-full bg-gray-300"></div>
           <div className="flex-1">
-            <p className="text-sm font-semibold text-gray-900">Oli, Luiz Henrique</p>
+            <p className="text-sm font-semibold text-gray-900">Ola, Luiz Henrique</p>
           </div>
         </div>
         <div className="flex items-center gap-4">

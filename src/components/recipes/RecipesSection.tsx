@@ -3,17 +3,17 @@ export default function RecipesSection() {
     {
       id: 1,
       title: "Suco de laranja",
-      image: "/glass-of-orange-juice.png",
+      image: "/",
     },
     {
       id: 2,
       title: "Açaí com granola",
-      image: "/acai-with-granola.jpg",
+      image: "/",
     },
     {
       id: 3,
       title: "Salada fresca",
-      image: "/fresh-salad.png",
+      image: "/",
     },
   ]
 

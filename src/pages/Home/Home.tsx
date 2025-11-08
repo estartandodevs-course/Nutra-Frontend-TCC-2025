@@ -19,8 +19,8 @@ export default function Home() {
           <RecipesSection />
           <ExperimentsSection />
         </div>
+        <BottomNav />
       </div>
-      <BottomNav />
     </Wrapper>
   )
 }
