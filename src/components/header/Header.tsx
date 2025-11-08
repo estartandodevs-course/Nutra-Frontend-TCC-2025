@@ -1,14 +1,13 @@
-import { Bell, Settings } from "lucide-react"
+import { Bell, Settings } from "lucide-react";
 
 export default function Header() {
   return (
-    <div className="bg-white border-b border-gray-200 px-4 py-4">
+    <div className="absolute top-0 left-0 w-full bg-white border-b border-gray-200 px-4 py-4 z-20 rounded-t-2xl">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          
           <div className="w-10 h-10 rounded-full bg-gray-300"></div>
           <div className="flex-1">
-            <p className="text-sm font-semibold text-gray-900">Ola, Luiz Henrique</p>
+            <p className="text-sm font-semibold text-gray-900">Olá, Luiz Henrique</p>
           </div>
         </div>
         <div className="flex items-center gap-4">
@@ -17,5 +16,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-  )
+  );
 }

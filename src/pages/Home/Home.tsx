@@ -9,10 +9,10 @@ import Wrapper from "../../components/wrapper/Wrapper"
 
 export default function Home() {
   return (
-    <Wrapper className="flex flex-col bg-white overflow-hidden h-screen">
+    <Wrapper>
       <div className="flex-1 overflow-y-auto pb-20">
         <Header />
-        <div className="px-4 py-4 space-y-6">
+        <div className="px-4 py-4 space-y-6 mt-10">
           <DailyChallenge />
           <VideoSection />
           <GamesSection />
