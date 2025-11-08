@@ -29,8 +29,7 @@ export default function QuizPage() {
   const currentQuestion = quizData[currentStep];
 
   return (
-    <Wrapper>
-      <section className="flex flex-col items-center justify-center text-center min-h-screen p-4">
+    <Wrapper className="bg-white flex flex-col items-center justify-center text-center min-h-screen p-4">
         <QuizModal
           question={currentQuestion}
           questionNumber={currentStep + 1}
@@ -40,7 +39,6 @@ export default function QuizPage() {
           onNext={handleSeguinte}
           onBack={handleVolta}
         />
-      </section>
     </Wrapper>
   );
 }
