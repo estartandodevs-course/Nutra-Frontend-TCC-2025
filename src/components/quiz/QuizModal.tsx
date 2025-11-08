@@ -11,7 +11,8 @@ export default function QuizModal({
   onBack,
 }: QuizModalProps) {
   return (
-    <QuestionModal
+    <div className="mt-10">
+    <QuestionModal 
       question={question}
       questionNumber={questionNumber}
       totalQuestions={totalQuestions}
@@ -20,5 +21,6 @@ export default function QuizModal({
       onNext={onNext}
       onBack={onBack}
     />
+    </div>
   );
 }
