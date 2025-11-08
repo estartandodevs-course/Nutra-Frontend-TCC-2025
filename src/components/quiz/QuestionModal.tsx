@@ -14,8 +14,8 @@ export default function QuestionModal({
 
   return (
     <div className="w-full max-w-sm mx-auto">
-      <div className="bg-yellow-100 rounded-xl shadow-md p-4 mb-4">
-        <div className="flex items-center gap-2 mb-2">
+      <div className="bg-yellow-100 rounded-xl shadow-md p-4 mb-2">
+        <div className="flex items-center justify-center gap-2 h-12">
           <span className="text-2xl">{question.emoji}</span>
           <h2 className="text-sm font-semibold text-orange-700">
             Vamos conhecer o seu perfil!
@@ -25,7 +25,7 @@ export default function QuestionModal({
 
       <ProgressBar current={questionNumber} total={totalQuestions} />
 
-      <div className="bg-yellow-100 rounded-xl shadow-md p-4 mb-4">
+      <div className="bg-yellow-100 rounded-xl shadow-md p-4 mb-16">
         <h3 className="text-base font-bold text-orange-600 mb-4">
           {questionNumber}. {question.question}
         </h3>
@@ -33,7 +33,6 @@ export default function QuestionModal({
         <div className="flex flex-col gap-3">
           {question.options?.map((option, index) => {
             const isSelected = selectedAnswer === index;
-
             return (
               <button
                 key={index}
