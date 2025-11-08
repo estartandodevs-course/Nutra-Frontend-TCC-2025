@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // 
-import Wrapper from "../../components/wrapper/Wrapper";
+import Wrapper from "../../components/general/Wrapper";
 import QuizModal from "../../components/quiz/QuizModal";
 import { quizData } from "../../data/quizdata";
 
