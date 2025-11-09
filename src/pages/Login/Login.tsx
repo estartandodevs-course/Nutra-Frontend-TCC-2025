@@ -29,7 +29,7 @@ export default function LoginForm() {
   };
 
   const handleForgotPassword = () => {
-    navigate("/esquecisenha");
+    navigate("/esquecisenha"); // se der tempo, farei esta página
   };
 
   return (
