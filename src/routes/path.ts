@@ -3,6 +3,7 @@ export const PATHS = {
   QUIZ: "/quiz",
   ACHIEVEMENTS: "/conquistas",
   RECIPES: "/receitas",
+  LOGIN: "/login",
 } as const;
 
 export type PathKeys = keyof typeof PATHS;
