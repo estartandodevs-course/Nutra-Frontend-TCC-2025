@@ -6,6 +6,7 @@ import { loginSchema, type LoginFormData } from "../../schema/login.schema";
 import Wrapper from "../../components/general/Wrapper";
 
 import Cajuzinho from "../../assets/images/login/cajuzinho.png";
+import Nutra from "../../assets/images/login/logofinal1.png";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -33,7 +34,13 @@ export default function LoginForm() {
 
   return (
     <Wrapper>
-      <div className="flex flex-col justify-center items-center w-full h-full px-6 py-8">
+      <div className="flex flex-col justify-center items-center w-full h-full px-6 py-8 relative">
+        <img
+          src={Nutra}
+          alt="Logo"
+          className="w-32 h-auto z-20 mb-30"
+        />
+
         <div className="w-full max-w-sm relative mb-16">
           <div className="bg-yellow-100/50 rounded-xl shadow-md p-4">
             <h2 className="text-xl font-bold text-gray-900 text-center mt-10">
