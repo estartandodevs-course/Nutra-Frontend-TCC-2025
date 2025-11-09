@@ -45,8 +45,8 @@ export default function RecipeDetailsPage() {
               Ingredientes
             </h2>
             <ul className="list-disc list-inside space-y-1 text-gray-700">
-              {recipe.ingredients.map((item, idx) => (
-                <li key={idx}>{item}</li>
+              {recipe.ingredients.map((item, index) => (
+                <li key={index}>{item}</li>
               ))}
             </ul>
           </div>
@@ -57,8 +57,8 @@ export default function RecipeDetailsPage() {
                 Modo de preparo
               </h2>
               <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                {recipe.instructions.map((step, idx) => (
-                  <li key={idx}>{step}</li>
+                {recipe.instructions.map((step, index) => (
+                  <li key={index}>{step}</li>
                 ))}
               </ol>
             </div>
