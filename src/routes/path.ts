@@ -3,6 +3,7 @@ export const PATHS = {
   QUIZ: "/quiz",
   ACHIEVEMENTS: "/conquistas",
   RECIPES: "/receitas",
+  RECIPE_DETAILS: "/receitas/:id", 
   LOGIN: "/login",
   SPLASH: "/splash",
 } as const;
