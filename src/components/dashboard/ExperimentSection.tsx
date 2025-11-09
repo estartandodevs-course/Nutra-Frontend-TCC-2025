@@ -1,19 +1,23 @@
+import HortaImage from "../../assets/images/experiments/experimento1.png";
+import AppleImage from "../../assets/images/experiments/experimento2.png";
+import BreadImage from "../../assets/images/experiments/experimento3.png";
+
 export default function ExperimentSection() {
   const experiments = [
     {
       id: 1,
-      title: "Experiência 1",
-      image: "/",
+      title: "Fazendo uma mini hortinha",
+      image: HortaImage,
     },
     {
       id: 2,
-      title: "Experiência 2",
-      image: "/",
+      title: "Explicando a oxidação",
+      image: AppleImage,
     },
     {
       id: 3,
-      title: "Experiência 3",
-      image: "/",
+      title: "Explicando a fermentação",
+      image: BreadImage,
     },
   ]
 
