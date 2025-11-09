@@ -1,17 +1,11 @@
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import ModalScreen from "./pages/ModalScreen/ModalScreen";
-import AchievementsPage from "./pages/AchievementsPage/AchievementsPage";
-import RecipesPage from "./pages/RecipesPage/RecipesPage";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/quiz" element={<ModalScreen />} />
-      <Route path="/conquistas" element={<AchievementsPage />} />
-      <Route path="/receitas" element={<RecipesPage />} />
-    </Routes>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 
