@@ -1,0 +1,96 @@
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useNavigate } from "react-router-dom"
+import { Input } from "../../components/login/Input"
+import { loginSchema, type LoginFormData } from "../../schema/login.schema"
+import Wrapper from "../../components/general/Wrapper"
+
+export default function LoginForm() {
+  const navigate = useNavigate()
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<LoginFormData>({
+    resolver: zodResolver(loginSchema),
+  })
+
+  const onSubmit = async (data: LoginFormData) => {
+    console.log("Tentativa de login:", data)
+    navigate("/")
+  }
+
+  const handleGmailLogin = () => {
+    console.log("Tentativa de login com o Gmail")
+  }
+
+  const handleForgotPassword = () => {
+    navigate("/esquecisenha")
+  }
+
+  return (
+    <Wrapper>
+      <div className="flex flex-col justify-center items-center w-full h-full px-6 py-8">
+        <div className="w-full max-w-sm space-y-6 bg-yellow-100/50 rounded-xl shadow-md p-4 mb-16">
+          <h2 className="text-xl font-bold text-gray-900 text-center">Login</h2>
+
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <Input
+              name="email"
+              type="email"
+              label="E-mail"
+              placeholder="seu@email.com"
+              register={register}
+              error={errors.email?.message}
+            />
+
+            <Input
+              name="password"
+              type="password"
+              label="Senha"
+              placeholder="••••••••"
+              register={register}
+              error={errors.password?.message}
+            />
+
+            <div className="text-right">
+              <button
+                type="button"
+                onClick={handleForgotPassword}
+                className="text-sm text-orange-600 hover:text-orange-700 font-medium"
+              >
+                Esqueceu sua senha?
+              </button>
+            </div>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-orange-400 text-white font-semibold py-3 rounded-lg transition duration-200"
+            >
+              {isSubmitting ? "Entrando..." : "Entrar"}
+            </button>
+          </form>
+
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300" />
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-2 text-gray-600">Ou entrar com</span>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={handleGmailLogin}
+            className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-lg transition duration-200 flex items-center justify-center gap-2"
+          >
+            Gmail
+          </button>
+        </div>
+      </div>
+    </Wrapper>
+  )
+}

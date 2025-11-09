@@ -13,7 +13,7 @@ export function Input({ name, placeholder, type, register, rules, error, label }
         type={type}
         placeholder={placeholder}
         {...register(name, rules)}
-        className={`w-full px-4 py-2 border-2 rounded-lg transition focus:outline-none ${
+        className={`w-full px-4 py-2 border-2 rounded-lg bg-white transition focus:outline-none ${
           error
             ? "border-red-500 focus:border-red-500"
             : "border-orange-300 focus:border-orange-500"
