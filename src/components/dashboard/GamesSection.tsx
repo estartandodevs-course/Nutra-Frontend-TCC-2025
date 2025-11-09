@@ -1,9 +1,9 @@
 export default function GamesSection() {
   const games = [
-    { id: 1, title: "Jogo 1", icon: "🎮" },
-    { id: 2, title: "Jogo 2", icon: "🎯" },
-    { id: 3, title: "Jogo 3", icon: "🎲" },
-    { id: 4, title: "Jogo 4", icon: "🃏" },
+    { id: 1, title: "Jogo da Memória", icon: "🎮" },
+    { id: 2, title: "Quiz Educativo", icon: "🎯" },
+    { id: 3, title: "Caça Palavras", icon: "🎲" },
+    { id: 4, title: "Quebra Cabeças", icon: "🃏" },
   ]
 
   return (
