@@ -34,6 +34,7 @@ export const recipes = [
     instructions: [
       "Tempere as asinhas com alho e limão.",
       "Asse no forno e adicione o molho shoyu no final.",
+      "Nos últimos 5 minutos, pincele o molho shoyu sobre as asinhas para caramelizar.",
     ],
   },
   {
@@ -42,7 +43,9 @@ export const recipes = [
     image: saladaDeFrutaImage,
     ingredients: ["2 laranjas", "3 limões", "2 tangerinas", "1 cenoura"],
     instructions: [
-      "Descasque e corte as frutas.",
+      "Descasque e corte com cuidado as frutas.",
+      "Separe elas em um pote ou recipiente higienizado.",
+      "Rale a cenoura e adicione por cima das frutas.",  
       "Misture tudo em uma tigela e sirva gelado.",
     ],
   },
