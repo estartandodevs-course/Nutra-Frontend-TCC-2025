@@ -2,30 +2,7 @@ import Wrapper from "../../components/general/Wrapper"
 import { RecipesHeader }  from "../../components/recipes/HeaderRecipe"
 import { RecipeCard } from "../../components/recipes/RecipeCard"
 import  BottomNav  from "../../components/general/BottomNav"
-import smoothieImage from "../../assets/images/recipes/receita 1.png";
-import asasDeFrangoImage from "../../assets/images/recipes/receita 2.png";
-import saladaDeFrutaImage from "../../assets/images/recipes/receita 3.png";
-
-const recipes = [
-    {
-      id: "1",
-      title: "Smoothie de morango e banana",
-      image: smoothieImage,
-      ingredients: ["8 morangos", "8 morangos", "1 banana roxa", "1 copo de leite", "200ml de leite"],
-    },
-    {
-      id: "2",
-      title: "Asas de frango com molho",
-      image: asasDeFrangoImage,
-      ingredients: ["8 asas", "10 asinhas de frango", "2 dentes de alho", "150ml de molho shoyu", "1 limão"],
-    },
-    {
-      id: "3",
-      title: "Salada fresca",
-      image: saladaDeFrutaImage,
-      ingredients: ["2 laranjas", "3 limões", "2 tangerinas", "1 cenoura"],
-    },
-  ];
+import { recipes } from "../../mocks/recipes";
 
 export default function RecipesPage() {
   return (
