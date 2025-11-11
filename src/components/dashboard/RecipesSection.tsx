@@ -1,26 +1,6 @@
-import smoothieImage from "../../assets/images/recipes/receita 1.png";
-import asasDeFrangoImage from "../../assets/images/recipes/receita 2.png";
-import saladaDeFrutaImage from "../../assets/images/recipes/receita 3.png";
+import { recipes } from "../../mocks/recipes";
 
 export default function RecipesSection() {
-  const recipes = [
-    {
-      id: 1,
-      title: "Smoothie de morango e banana",
-      image: smoothieImage,
-    },
-    {
-      id: 2,
-      title: "Asas de frango com molho",
-      image: asasDeFrangoImage,
-    },
-    {
-      id: 3,
-      title: "Salada fresca",
-      image: saladaDeFrutaImage,
-    },
-  ];
-
   return (
     <div className="space-y-3 text-center">
       <div className="flex justify-between items-center px-2">
