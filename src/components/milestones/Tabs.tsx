@@ -1,7 +1,4 @@
-interface TabsProps {
-  activeTab: "progress" | "achievements"
-  onTabChange: (tab: "progress" | "achievements") => void
-}
+import type { TabsProps } from "../../types/tabs"
 
 export default function Tabs({ activeTab, onTabChange }: TabsProps) {
   return (

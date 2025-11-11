@@ -1,12 +1,4 @@
-import type { Achievement } from "../../types/achievement"
-
-
-const achievementsList: Achievement[] = [
-  { id: "chef", icon: "🧑‍🍳", label: "Top Chef", sublabel: "" },
-  { id: "frutas", icon: "🍓", label: "Amigo das", sublabel: "Frutas" },
-  { id: "natureza", icon: "🥗", label: "Natureza", sublabel: "" },
-  { id: "agua", icon: "💧", label: "Mestre da", sublabel: "Hidratação" },
-]
+import { achievementsList } from "../../mocks/achievementlist"
 
 export default function Achievements() {
   return (
