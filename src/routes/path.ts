@@ -7,6 +7,7 @@ export const PATHS = {
   LOGIN: "/login",
   SPLASH: "/splash",
   WELCOME: "/welcome",
+  REGISTER: "/register",
 } as const;
 
 export type PathKeys = keyof typeof PATHS;
