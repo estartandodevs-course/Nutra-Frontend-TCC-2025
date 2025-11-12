@@ -14,7 +14,7 @@ export function InputRegister({ type, placeholder, name, register, error, label 
         type={type}
         placeholder={placeholder}
         {...register(name)}
-        className={`border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 ${
+        className={`border rounded-lg bg-white px-3 py-2 focus:outline-none focus:ring-2 ${
           error ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-orange-500"
         }`}
       />
