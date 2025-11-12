@@ -6,6 +6,7 @@ import RecipesPage from "../pages/RecipesPage/RecipesPage";
 import LoginPage from "../pages/Login/Login";
 import SplashPage from "../pages/SplashPage/SplashPage";
 import RecipeDetailsPage from "../pages/RecipesDetailsPage/RecipesDetailsPage";
+import WelcomePage from "../pages/WelcomePage/WelcomePage";
 
 const NotFound = () => <div>Página não encontrada</div>;
 
@@ -19,6 +20,7 @@ export default function AppRoutes() {
       <Route path={PATHS.RECIPE_DETAILS} element={<RecipeDetailsPage />} />
       <Route path={PATHS.LOGIN} element={<LoginPage />} />
       <Route path={PATHS.SPLASH} element={<SplashPage />} />
+      <Route path={PATHS.WELCOME} element={<WelcomePage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
