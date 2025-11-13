@@ -16,7 +16,7 @@ export default function WelcomePage() {
             className="w-98 h-auto mb-5"
           />
 
-          <p className="text-gray-700 text-base font-medium mt-4">
+          <p className="text-gray-800 text-base font-medium mt-4">
             Seja bem-vindo(a)!
           </p>
 
