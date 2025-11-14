@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import TaskItem from "../progress/TaskItem"
 
 interface Task {
@@ -46,11 +45,9 @@ const TASKS: Task[] = [
 ]
 
 export default function TasksList() {
-  const [tasks, setTasks] = useState<Task[]>(TASKS)
-
   return (
     <div className="space-y-3">
-      {tasks.map((task) => (
+      {TASKS.map((task) => (
         <TaskItem key={task.id} task={task} />
       ))}
     </div>
