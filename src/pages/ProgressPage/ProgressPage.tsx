@@ -6,18 +6,18 @@ import BottomNav from "../../components/general/BottomNav"
 
 export default function ProgressPage() {
   return (
+    <>
     <Wrapper>
       <Header />
-
       <main className="flex-1 overflow-y-auto px-4 py-6 pb-20">
         <div className="max-w-md mx-auto">
           <ProgressCard />
           <TaskList />
         </div>
       </main>
-
-      <BottomNav />
     </Wrapper>
+    <BottomNav />
+    </>
   );
 }
 
