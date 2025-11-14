@@ -10,6 +10,7 @@ import WelcomePage from "../pages/WelcomePage/WelcomePage";
 import RegisterPage from "../pages/Register/Register";
 import ChoicesPage from "../pages/ChoicesPage/ChoicesPage";
 import TreePage from "../pages/TreePage/TreePage";
+import ProgressPage from "../pages/ProgressPage/ProgressPage";
 
 const NotFound = () => <div>Página não encontrada</div>;
 
@@ -27,6 +28,7 @@ export default function AppRoutes() {
       <Route path={PATHS.REGISTER} element={<RegisterPage />} />
       <Route path={PATHS.CHOICES} element={<ChoicesPage />} />
       <Route path={PATHS.PLANT_TREE} element={<TreePage />} />
+      <Route path={PATHS.PROGRESS} element={<ProgressPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

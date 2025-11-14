@@ -10,6 +10,7 @@ export const PATHS = {
   REGISTER: "/register",
   CHOICES: "/choices",
   PLANT_TREE: "/tree",
+  PROGRESS: "/progress",
 } as const;
 
 export type PathKeys = keyof typeof PATHS;
