@@ -4,6 +4,7 @@ import Header from "../../components/tree/HeaderTree"
 import PlantContainer from "../../components/tree/PlantContainer"
 import ShopSection from "../../components/tree/ShopSection"
 import Wrapper from "../../components/general/Wrapper"
+import BottomNav from "../../components/general/BottomNav"
 
 export default function TreePage() {
   const [points, setPoints] = useState(500)
@@ -35,6 +36,7 @@ export default function TreePage() {
   }
 
   return (
+    <>
     <Wrapper>
       <div className="w-full max-w-md mx-auto bg-white shadow-lg rounded-t-2xl min-h-[100dvh] overflow-y-auto">
         <Header level={level} points={points} />
@@ -59,5 +61,7 @@ export default function TreePage() {
         </motion.div>
       </div>
     </Wrapper>
+    <BottomNav />
+    </>
   )
 }

@@ -29,6 +29,7 @@ export default function RecipeDetailsPage() {
   }
 
   return (
+    <>
     <Wrapper>
       <RecipesHeader />
       <div className="flex-1 overflow-y-auto pb-24">
@@ -80,8 +81,8 @@ export default function RecipeDetailsPage() {
           </button>
         </div>
       </div>
-
-      <BottomNav />
     </Wrapper>
+    <BottomNav />
+    </>
   )
 }

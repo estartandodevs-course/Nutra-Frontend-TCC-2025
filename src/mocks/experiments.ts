@@ -1,6 +1,6 @@
-import HortaImage from "../../assets/images/experiments/experimento1.png";
-import AppleImage from "../../assets/images/experiments/experimento2.png";
-import BreadImage from "../../assets/images/experiments/experimento3.png";
+import HortaImage from "../assets/images/experiments/experimento1.png";
+import AppleImage from "../assets/images/experiments/experimento2.png";
+import BreadImage from "../assets/images/experiments/experimento3.png";
 
 export const experiments = [
     {
