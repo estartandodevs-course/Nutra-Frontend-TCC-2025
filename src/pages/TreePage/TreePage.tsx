@@ -5,6 +5,7 @@ import PlantContainer from "../../components/tree/PlantContainer"
 import ShopSection from "../../components/tree/ShopSection"
 import Wrapper from "../../components/general/Wrapper"
 import BottomNav from "../../components/general/BottomNav"
+import Hortinha from "../../assets/images/tree/hortinh 1.png"
 
 export default function TreePage() {
   const [points, setPoints] = useState(500)
@@ -37,31 +38,37 @@ export default function TreePage() {
 
   return (
     <>
-    <Wrapper>
-      <div className="w-full max-w-md mx-auto bg-white shadow-lg rounded-t-2xl min-h-[100dvh] overflow-y-auto">
+      <Wrapper>
         <Header level={level} points={points} />
+        <div className="w-full max-w-md mx-auto min-h-[100dvh] overflow-y-auto">
+          <div
+            className="min-h-[100dvh] bg-cover bg-center bg-no-repeat pb-20 pt-4 px-2"
+            style={{
+              backgroundImage: `url(${Hortinha})`,
+            }}
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {activeTab === "home" && (
+                <>
+                  <PlantContainer
+                    plantHealth={plantHealth}
+                    waterLevel={waterLevel}
+                    onWater={handleWater}
+                  />
 
-        <motion.div
-          className="pb-20 pt-4 px-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {activeTab === "home" && (
-            <>
-              <PlantContainer
-                plantHealth={plantHealth}
-                waterLevel={waterLevel}
-                onWater={handleWater}
-              />
+                  <ShopSection onBuyItem={buyItem} points={points} />
+                </>
+              )}
+            </motion.div>
+          </div>
+        </div>
+      </Wrapper>
 
-              <ShopSection onBuyItem={buyItem} points={points} />
-            </>
-          )}
-        </motion.div>
-      </div>
-    </Wrapper>
-    <BottomNav />
+      <BottomNav />
     </>
   )
 }
