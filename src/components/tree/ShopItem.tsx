@@ -1,16 +1,5 @@
 import { motion } from "framer-motion"
-
-interface ShopItemProps {
-  item: {
-    id: number
-    name: string
-    emoji: string
-    cost: number
-  }
-  onBuy: () => void
-  isAffordable: boolean
-  index: number
-}
+import type { ShopItemProps } from "../../types/tree"
 
 export default function ShopItem({ item, onBuy, isAffordable, index }: ShopItemProps) {
   return (
