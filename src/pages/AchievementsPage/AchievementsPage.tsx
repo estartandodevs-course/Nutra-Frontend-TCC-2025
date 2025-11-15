@@ -1,16 +1,19 @@
-import { useState } from "react";
-import Wrapper from "../../components/general/Wrapper";
-import HeaderAchievement from "../../components/milestones/HeaderAchievement";
-import UserProfileAchievement from "../../components/milestones/UserProfileAchievement";
-import Achievement from "../../components/milestones/Achievement";
-import Rankings from "../../components/milestones/Ranking";
-import BottomNav from "../../components/general/BottomNav";
-import Tabs from "../../components/milestones/Tabs";
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import Wrapper from "../../components/general/Wrapper"
+import HeaderAchievement from "../../components/milestones/HeaderAchievement"
+import UserProfileAchievement from "../../components/milestones/UserProfileAchievement"
+import Achievement from "../../components/milestones/Achievement"
+import Rankings from "../../components/milestones/Ranking"
+import BottomNav from "../../components/general/BottomNav"
+import Tabs from "../../components/milestones/Tabs"
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"progress" | "achievements">(
     "achievements"
-  );
+  )
+
+  const navigate = useNavigate()
 
   return (
     <>
@@ -19,7 +22,16 @@ export default function Home() {
         <main className="flex-1 overflow-y-auto px-4 py-6 pb-16">
           <UserProfileAchievement name="Henrique" level={3} points={500} />
 
-          <Tabs activeTab={activeTab} onTabChange={setActiveTab} />
+          <Tabs
+            activeTab={activeTab}
+            onTabChange={(tab) => {
+              if (tab === "progress") {
+                navigate("/progress")
+                return
+              }
+              setActiveTab(tab)
+            }}
+          />
 
           {activeTab === "achievements" && (
             <div className="mt-8 space-y-8">
@@ -27,18 +39,10 @@ export default function Home() {
               <Rankings />
             </div>
           )}
-
-          {activeTab === "progress" && (
-            <div className="mt-8">
-              <p className="text-center text-gray-600">
-                Seção de progresso em desenvolvimento
-              </p>
-            </div>
-          )}
         </main>
       </Wrapper>
 
       <BottomNav />
     </>
-  );
+  )
 }
