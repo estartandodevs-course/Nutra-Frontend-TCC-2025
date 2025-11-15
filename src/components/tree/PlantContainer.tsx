@@ -21,7 +21,7 @@ export default function PlantContainer({ plantHealth, waterLevel, onWater }: Pla
       <div className="flex gap-3 w-full max-w-xs">
         <motion.button
           onClick={onWater}
-          className="flex-1 bg-blue-400 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl shadow-lg transition transform active:scale-95"
+          className="flex-1 bg-blue-400 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl shadow-lg transition transform active:scale-95 cursor-pointer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
