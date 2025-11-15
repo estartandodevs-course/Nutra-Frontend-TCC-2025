@@ -1,12 +1,7 @@
 import { motion } from "framer-motion"
 import Plant from "../tree/Plant"
 import HealthBar from "../tree/HealthBar" 
-
-interface PlantContainerProps {
-  plantHealth: number
-  waterLevel: number
-  onWater: () => void
-}
+import type { PlantContainerProps } from "../../types/tree"
 
 export default function PlantContainer({ plantHealth, waterLevel, onWater }: PlantContainerProps) {
   return (

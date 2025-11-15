@@ -1,10 +1,6 @@
 import { motion } from "framer-motion"
+import type { HealthBarProps } from "../../types/tree"
 
-interface HealthBarProps {
-  label: string
-  value: number
-  color: string
-}
 
 export default function HealthBar({ label, value, color }: HealthBarProps) {
   return (
