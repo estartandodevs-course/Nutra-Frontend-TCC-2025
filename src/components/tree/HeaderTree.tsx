@@ -1,10 +1,6 @@
 import { Bell, Settings, ChevronLeft } from "lucide-react"
 import { motion } from "framer-motion"
-
-interface HeaderProps {
-  level: number
-  points: number
-}
+import type { HeaderProps } from "../../types/tree"
 
 export default function HeaderTree({ level, points }: HeaderProps) {
   return (

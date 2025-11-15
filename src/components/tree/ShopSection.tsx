@@ -1,10 +1,6 @@
 import { motion } from "framer-motion"
 import ShopItem from "../tree/ShopItem"
-
-interface ShopSectionProps {
-  onBuyItem: (cost: number) => void
-  points: number
-}
+import type { ShopSectionProps } from "../../types/tree"
 
 const SHOP_ITEMS = [
   { id: 1, name: "Maçã", emoji: "🍎", cost: 100 },

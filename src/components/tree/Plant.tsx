@@ -1,8 +1,5 @@
 import { motion } from "framer-motion"
-
-interface PlantProps {
-  health: number
-}
+import type { PlantProps } from "../../types/tree"
 
 export default function Plant({ health }: PlantProps) {
   const getPlantStage = () => {
