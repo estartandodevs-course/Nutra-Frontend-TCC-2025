@@ -1,12 +1,7 @@
 import { Check } from 'lucide-react'
+import { badges } from '../../mocks/badges'
 
 export default function ProgressCard() {
-  const badges = [
-    { xp: '50xp', completed: true },
-    { xp: '50xp', completed: true },
-    { xp: '100xp', completed: true },
-    { xp: '200xp', completed: true },
-  ]
 
   return (
     <div className="bg-yellow-100 rounded-3xl p-6 shadow-sm mb-6">
