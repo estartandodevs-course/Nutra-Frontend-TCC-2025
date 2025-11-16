@@ -11,6 +11,7 @@ export const PATHS = {
   CHOICES: "/choices",
   PLANT_TREE: "/tree",
   PROGRESS: "/progress",
+  MENU: "/menu",
 } as const;
 
 export type PathKeys = keyof typeof PATHS;
