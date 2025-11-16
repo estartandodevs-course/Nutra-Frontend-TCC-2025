@@ -1,13 +1,5 @@
 import { CheckCircle2, Circle } from 'lucide-react'
-
-interface Task {
-  id: string
-  title: string
-  icon: string
-  current: number
-  total: number
-  completed: boolean
-}
+import type { Task } from '../../types/task'
 
 export default function TaskItem({ task }: { task: Task }) {
   const percentage = (task.current / task.total) * 100
