@@ -1,11 +1,17 @@
-import { CheckCircle2, Circle } from 'lucide-react'
-import type { Task } from '../../types/task'
+import { CheckCircle2, Circle } from "lucide-react";
+import { useTasks } from "../../hooks/useTask";
+import type { Task } from "../../types/tasklist";
 
 export default function TaskItem({ task }: { task: Task }) {
-  const percentage = (task.current / task.total) * 100
+  const { toggleTask, increaseProgress } = useTasks();
+
+  const percentage = (task.current / task.total) * 100;
 
   return (
-    <div className="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-sm border border-gray-200">
+    <div
+      className="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-sm border border-gray-200"
+      onClick={() => increaseProgress(task.id, 1)}
+    >
       <div className="flex-shrink-0 w-14 h-14 rounded-full bg-orange-50 flex items-center justify-center text-2xl border-2 border-orange-200">
         {task.icon}
       </div>
@@ -25,7 +31,13 @@ export default function TaskItem({ task }: { task: Task }) {
         </p>
       </div>
 
-      <div className="flex-shrink-0">
+      <div
+        className="flex-shrink-0 cursor-pointer"
+        onClick={(e) => {
+          e.stopPropagation();
+          toggleTask(task.id);
+        }}
+      >
         {task.completed ? (
           <CheckCircle2 className="w-7 h-7 text-green-500 fill-green-500" />
         ) : (
@@ -33,5 +45,5 @@ export default function TaskItem({ task }: { task: Task }) {
         )}
       </div>
     </div>
-  )
+  );
 }
