@@ -25,7 +25,7 @@ export default function WelcomePage() {
           <div className="flex flex-col gap-4 w-full items-center md:mb-4">
             <button
               onClick={() => navigate("/register")}
-              className="w-full max-w-[408px] md:w-[408px] h-[52px] bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition duration-200"
+              className="w-full max-w-[408px] md:w-[408px] h-[52px] bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition duration-200 cursor-pointer"
             >
               Fazer cadastro
             </button>
