@@ -19,7 +19,7 @@ export default function ProgressCard() {
           </div>
         ))}
       </div>
-      <button className="w-full border-2 border-orange-500 text-orange-500 rounded-xl py-2 font-semibold hover:bg-orange-50 transition-colors">
+      <button className="w-full border-2 border-orange-500 text-orange-500 rounded-xl py-2 font-semibold hover:bg-orange-50 transition-colors cursor-pointer">
         Coletar
       </button>
     </div>

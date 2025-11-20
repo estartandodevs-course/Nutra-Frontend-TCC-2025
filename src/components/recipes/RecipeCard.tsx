@@ -28,7 +28,7 @@ export function RecipeCard({ id, title, image, ingredients }: RecipeCardProps) {
 
         <button
           onClick={() => navigate(`/receitas/${id}`)}
-          className="text-red-500 text-sm font-medium hover:text-red-600 transition-colors"
+          className="text-red-500 text-sm font-medium hover:text-red-600 transition-colors cursor-pointer"
         >
           Ver receita completa
         </button>
