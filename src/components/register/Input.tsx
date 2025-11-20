@@ -5,7 +5,7 @@ export function InputRegister({ type, placeholder, name, register, error, label 
   return (
     <div className="flex flex-col mb-3">
       {label && (
-        <label className="text-sm text-gray-700 mb-1">
+        <label htmlFor={name} className="text-sm font-medium text-orange-600">
           {label}
         </label>
       )}

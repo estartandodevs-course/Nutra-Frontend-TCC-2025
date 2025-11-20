@@ -9,7 +9,7 @@ export default function WelcomePage() {
   return (
     <Wrapper>
       <div className="relative w-full h-full flex flex-col items-center justify-between bg-white overflow-hidden">
-        <div className="flex flex-col items-center text-center z-10 mt-28 px-6">
+        <div className="flex flex-col items-center text-center z-10 mt-32 px-6">
           <img
             src={BigNutraLogo}
             alt="Logo Nutra"

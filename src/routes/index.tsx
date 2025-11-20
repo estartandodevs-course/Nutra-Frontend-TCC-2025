@@ -12,13 +12,14 @@ import ChoicesPage from "../pages/ChoicesPage/ChoicesPage";
 import TreePage from "../pages/TreePage/TreePage";
 import ProgressPage from "../pages/ProgressPage/ProgressPage";
 import Menu from "../pages/ModalMenu/ModalMenu";
+import Home from "../pages/Home/Home";
 
 const NotFound = () => <div>Página não encontrada</div>;
 
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path={PATHS.HOME} element={<SplashPage />}  /> {/* Na verdade é <Home />, mas vou deixar essa págima como Home por enquanto */}
+      <Route path={PATHS.HOME} element={<Home />}  /> {/* Na verdade é <Home />, mas vou deixar essa págima como Home por enquanto */}
       <Route path={PATHS.QUIZ} element={<ModalScreen />} />
       <Route path={PATHS.ACHIEVEMENTS} element={<AchievementsPage />} />
       <Route path={PATHS.RECIPES} element={<RecipesPage />} />
