@@ -15,9 +15,7 @@ export default function ProgressPage() {
     <>
       <Wrapper>
         <div className="relative w-full max-w-md mx-auto">
-
           <Header />
-
           <div className="absolute left-0 right-0 top-20 flex justify-center gap-2 z-40 pointer-events-none">
             <img src={Uva} alt="Uva" className="w-28 h-auto pointer-events-auto" />
             <img src={Cajuzinho} alt="Cajuzinho" className="w-28 h-auto pointer-events-auto" />
