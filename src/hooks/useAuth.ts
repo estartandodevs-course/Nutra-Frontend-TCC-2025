@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
-
-interface User {
-  name?: string;
-  email: string;
-  password: string;
-}
+import type { User } from "../types/hooks";
 
 export function useAuth() {
   const [user, setUser] = useState<User | null>(null);

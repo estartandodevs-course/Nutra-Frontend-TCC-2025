@@ -1,10 +1,5 @@
 import { useState } from "react";
-
-interface RegisterUser {
-  name: string;
-  email: string;
-  password: string;
-}
+import type { RegisterUser } from "../types/hooks";
 
 export function useRegister() {
   const [loading, setLoading] = useState(false);
