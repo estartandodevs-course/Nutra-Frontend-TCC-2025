@@ -1,6 +1,6 @@
 // import { useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
-import Wrapper from "../../components/general/Wrapper";
+import Wrapper from "../../components/General/Wrapper";
 import SplashScreen from "../../components/splashscreen/Splash";
 
 export default function SplashPage() {

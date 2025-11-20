@@ -1,4 +1,4 @@
-import QuestionModal from "./QuestionModal";
+import QuestionModal from "../Quiz/QuestionModal";
 import type { QuizModalProps } from "../../types/quiz";
 
 export default function QuizModal({

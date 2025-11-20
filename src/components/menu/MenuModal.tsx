@@ -34,7 +34,7 @@ export default function MenuModal({
 
   const closeAndGoHome = () => {
     onClose();
-    navigate("/");
+    navigate("/dashboard");
   };
 
   return (

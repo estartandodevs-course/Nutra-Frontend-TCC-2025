@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // 
-import Wrapper from "../../components/general/Wrapper";
-import QuizModal from "../../components/quiz/QuizModal";
+import Wrapper from "../../components/General/Wrapper";
+import QuizModal from "../../components/Quiz/QuizModal";
 import { quizData } from "../../data/quizdata";
 
 export default function QuizPage() {
@@ -20,7 +20,7 @@ export default function QuizPage() {
     if (currentStep < quizData.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
-      navigate("/");
+      navigate("/dashboard");
     }
   };
 

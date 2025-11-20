@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../components/login/Input";
 import { loginSchema, type LoginFormData } from "../../schema/login.schema";
-import Wrapper from "../../components/general/Wrapper";
+import Wrapper from "../../components/General/Wrapper";
 import { useAuth } from "../../hooks/useAuth";
 import Cajuzinho from "../../assets/images/login/cajuzinho.png";
 import Nutra from "../../assets/images/login/logofinal1.png";

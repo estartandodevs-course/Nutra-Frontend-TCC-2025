@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import ShopItem from "../tree/ShopItem"
+import ShopItem from "../Tree/ShopItem"
 import type { ShopSectionProps } from "../../types/tree"
 import { SHOP_ITEMS } from "../../mocks/tree"
 

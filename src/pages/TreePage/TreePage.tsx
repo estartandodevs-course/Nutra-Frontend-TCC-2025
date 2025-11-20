@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import Header from "../../components/tree/HeaderTree"
-import PlantContainer from "../../components/tree/PlantContainer"
-import ShopSection from "../../components/tree/ShopSection"
-import Wrapper from "../../components/general/Wrapper"
-import BottomNav from "../../components/general/BottomNav"
+import Header from "../../components/Tree/HeaderTree"
+import PlantContainer from "../../components/Tree/PlantContainer"
+import ShopSection from "../../components/Tree/ShopSection"
+import Wrapper from "../../components/General/Wrapper"
+import BottomNav from "../../components/General/BottomNav"
 import Hortinha from "../../assets/images/tree/hortinh 1.png"
 
 export default function TreePage() {

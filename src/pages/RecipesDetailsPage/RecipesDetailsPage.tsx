@@ -1,8 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom"
-import Wrapper from "../../components/general/Wrapper"
-import BottomNav from "../../components/general/BottomNav"
+import Wrapper from "../../components/General/Wrapper"
+import BottomNav from "../../components/General/BottomNav"
 import { recipes } from "../../mocks/recipes"
-import { RecipesHeader } from "../../components/recipes/HeaderRecipe"
+import { RecipesHeader } from "../../components/Recipes/HeaderRecipe"
 
 export default function RecipeDetailsPage() {
   const { id } = useParams()
