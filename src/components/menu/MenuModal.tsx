@@ -1,7 +1,7 @@
 import { X } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 
-interface MenuModalProps {
+export interface MenuModalProps {
   profileName: string;
   profileRole: string;
   profileImage?: string;
@@ -17,7 +17,7 @@ const menuItems = [
   { label: 'Vídeos', href: '/' },
   { label: 'Experimentos', href: '/' },
   { label: 'Meu Progresso', href: '/progress' },
-  { label: 'Desáfio diário', href: '/' },
+  { label: 'Desafio diário', href: '/' },
 ];
 
 export default function MenuModal({
@@ -32,27 +32,26 @@ export default function MenuModal({
 
   if (!isOpen) return null;
 
-  const closeAndGoHome = () => {
+  const closeAndGoDashboard = () => {
     onClose();
-    navigate("/");
+    navigate("/dashboard");
+  };
+
+  const handleMenuClick = (href: string) => {
+    onClose();
+    navigate(href);
   };
 
   return (
     <>
       <div
-        className="
-          fixed inset-y-0 left-0 right-0 
-          mx-auto 
-          max-w-md     /* Ajuste para o mesmo max-w do Wrapper */
-          bg-black/50 
-          z-40
-        "
-        onClick={closeAndGoHome}
+        className="fixed inset-0 bg-black/50 z-40"
+        onClick={closeAndGoDashboard}
         aria-hidden="true"
       />
 
       <div className="fixed inset-0 z-50 flex items-end md:items-center md:justify-center">
-        <div className="w-full md:max-w-sm bg-gradient-to-b from-orange-500 to-orange-600 rounded-3xl rounded-b-2xl p-8 text-center text-white shadow-2xl max-h-[90vh] overflow-y-auto mx-0 md:mx-auto">
+        <div className="w-full md:max-w-sm bg-gradient-to-b from-orange-500 to-orange-600 rounded-3xl p-8 text-center text-white shadow-2xl max-h-[90vh] overflow-y-auto mx-0 md:mx-auto">
 
           <div className="mb-8">
             <div className="flex justify-center mb-6">
@@ -75,20 +74,20 @@ export default function MenuModal({
             <p className="text-orange-100 text-sm">{profileRole}</p>
           </div>
 
-          <nav className="space-y-6 mb-10">
+          <nav className="flex flex-col items-center space-y-6 mb-10">
             {menuItems.map((item, index) => (
-              <a
+              <button
                 key={index}
-                href={item.href}
-                className="block text-lg font-semibold hover:text-orange-100 transition-colors"
+                onClick={() => handleMenuClick(item.href)}
+                className="text-lg font-semibold hover:text-orange-100 transition-colors"
               >
                 {item.label}
-              </a>
+              </button>
             ))}
           </nav>
 
           <button
-            onClick={closeAndGoHome}
+            onClick={closeAndGoDashboard}
             className="mx-auto flex items-center justify-center w-16 h-16 rounded-full border-3 border-white hover:bg-white/20 transition-colors"
           >
             <X className="w-8 h-8 stroke-3" />

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
-import Plant from "../tree/Plant"
-import HealthBar from "../tree/HealthBar" 
+import Plant from "../Tree/Plant"
+import HealthBar from "../Tree/HealthBar" 
 import type { PlantContainerProps } from "../../types/tree"
 
 export default function PlantContainer({ plantHealth, waterLevel, onWater }: PlantContainerProps) {

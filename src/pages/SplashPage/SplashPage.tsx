@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
-import Wrapper from "../../components/general/Wrapper";
-import SplashScreen from "../../components/splashscreen/Splash";
+import Wrapper from "../../components/General/Wrapper";
+import SplashScreen from "../../components/Splashscreen/Splash";
 
 export default function SplashPage() {
  /* const navigate = useNavigate();

@@ -1,8 +1,8 @@
-import Wrapper from "../../components/general/Wrapper";
-import Header from "../../components/dashboard/Header";
-import ProgressCard from "../../components/progress/ProgressCard";
-import TaskList from "../../components/progress/TaskList";
-import BottomNav from "../../components/general/BottomNav";
+import Wrapper from "../../components/General/Wrapper";
+import Header from "../../components/Dashboard/Header";
+import ProgressCard from "../../components/Progress/ProgressCard";
+import TaskList from "../../components/Progress/TaskList";
+import BottomNav from "../../components/General/BottomNav";
 import { useAuth } from "../../hooks/useAuth";
 import Cajuzinho from "../../assets/images/progress/Cajuca.png";
 import Brocolis from "../../assets/images/progress/Steve Brócolis 1.png";

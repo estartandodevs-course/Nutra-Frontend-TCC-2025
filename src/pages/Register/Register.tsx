@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
-import { InputRegister } from "../../components/register/Input";
-import Wrapper from "../../components/general/Wrapper";
+import { InputRegister } from "../../components/Register/Input";
+import Wrapper from "../../components/General/Wrapper";
 import Cajuzinho from "../../assets/images/login/cajuzinho.png";
 import Nutra from "../../assets/images/login/logofinal1.png";
 import { registerSchema, type RegisterFormData } from "../../schema/register.schema";
