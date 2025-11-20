@@ -25,13 +25,13 @@ export default function WelcomePage() {
           <div className="flex flex-col gap-4 w-full items-center">
             <button
               onClick={() => navigate("/choices")}
-              className="w-full max-w-[408px] md:w-[408px] h-[52px] bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition duration-200"
+              className="w-full max-w-[408px] md:w-[408px] h-[52px] bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition duration-200 cursor-pointer"
             >
               Aluno
             </button>
             <button
               onClick={() => navigate("/choices")}
-              className="w-full max-w-[408px] md:w-[408px] h-[52px] bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition duration-200"
+              className="w-full max-w-[408px] md:w-[408px] h-[52px] bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition duration-200 cursor-pointer"
             >
               Professor
             </button>

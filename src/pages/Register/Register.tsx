@@ -91,7 +91,7 @@ export default function RegisterPage() {
               <button
                 type="submit"
                 disabled={isSubmitting || loading}
-                className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-orange-400 text-white font-semibold py-3 rounded-lg transition duration-200"
+                className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-orange-400 text-white font-semibold py-3 rounded-lg transition duration-200 cursor-pointer"
               >
                 {isSubmitting || loading ? "Cadastrando..." : "Cadastrar"}
               </button>
@@ -101,7 +101,7 @@ export default function RegisterPage() {
               Já tem uma conta?{" "}
               <button
                 onClick={() => navigate("/login")}
-                className="text-orange-600 font-semibold hover:underline"
+                className="text-orange-600 font-semibold hover:underline cursor-pointer"
               >
                 Entrar
               </button>

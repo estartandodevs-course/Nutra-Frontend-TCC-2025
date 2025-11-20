@@ -31,7 +31,7 @@ export default function WelcomePage() {
             </button>
             <button
               onClick={() => navigate("/login")}
-              className="w-full max-w-[408px] md:w-[408px] h-[52px] bg-yellow-100/50 text-orange-600 font-semibold rounded-lg border border-orange-500 transition duration-200"
+              className="w-full max-w-[408px] md:w-[408px] h-[52px] bg-yellow-100/50 text-orange-600 font-semibold rounded-lg border border-orange-500 transition duration-200 cursor-pointer"
             >
               Já tenho uma conta!
             </button>
