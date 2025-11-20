@@ -1,15 +1,16 @@
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useNavigate } from "react-router-dom"
-import { InputRegister } from "../../components/register/Input"
-import Wrapper from "../../components/general/Wrapper"
-
-import Cajuzinho from "../../assets/images/login/cajuzinho.png"
-import Nutra from "../../assets/images/login/logofinal1.png"
-import { registerSchema, type RegisterFormData } from "../../schema/register.schema"
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
+import { InputRegister } from "../../components/register/Input";
+import Wrapper from "../../components/general/Wrapper";
+import Cajuzinho from "../../assets/images/login/cajuzinho.png";
+import Nutra from "../../assets/images/login/logofinal1.png";
+import { registerSchema, type RegisterFormData } from "../../schema/register.schema";
+import { useRegister } from "../../hooks/useRegister"; 
 
 export default function RegisterPage() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { registerUser, loading } = useRegister(); 
 
   const {
     register,
@@ -17,14 +18,23 @@ export default function RegisterPage() {
     formState: { errors, isSubmitting },
   } = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
-  })
+  });
 
   const onSubmit = async (data: RegisterFormData) => {
-    console.log("Tentativa de registro:", data)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    alert("Conta criada com sucesso!")
-    navigate("/login")
-  }
+    try {
+      await registerUser({
+        name: data.name,
+        email: data.email,
+        password: data.password,
+      });
+
+      alert("Conta criada com sucesso!");
+      navigate("/login");
+
+    } catch (error: any) {
+      alert(error.message);
+    }
+  };
 
   return (
     <Wrapper>
@@ -76,10 +86,10 @@ export default function RegisterPage() {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || loading}
                 className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-orange-400 text-white font-semibold py-3 rounded-lg transition duration-200"
               >
-                {isSubmitting ? "Cadastrando..." : "Cadastrar"}
+                {isSubmitting || loading ? "Cadastrando..." : "Cadastrar"}
               </button>
             </form>
 
@@ -102,5 +112,5 @@ export default function RegisterPage() {
         </div>
       </div>
     </Wrapper>
-  )
+  );
 }
