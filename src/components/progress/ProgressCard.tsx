@@ -1,7 +1,14 @@
-import { Check } from 'lucide-react'
-import { badges } from '../../mocks/badges'
+import { Check } from "lucide-react";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function ProgressCard() {
+  const { user } = useAuth();
+
+  const badges = [
+    { xp: 10, completed: user?.xp && user.xp >= 10 },
+    { xp: 20, completed: user?.xp && user.xp >= 20 },
+    { xp: 40, completed: user?.xp && user.xp >= 40 },
+  ];
 
   return (
     <div className="bg-yellow-100 rounded-3xl p-6 shadow-sm mb-6">
@@ -10,7 +17,9 @@ export default function ProgressCard() {
         {badges.map((badge, idx) => (
           <div
             key={idx}
-            className="flex-1 min-w-16 bg-orange-500 rounded-xl px-3 py-2 flex items-center justify-center gap-1 shadow-sm"
+            className={`flex-1 min-w-16 rounded-xl px-3 py-2 flex items-center justify-center gap-1 shadow-sm ${
+              badge.completed ? "bg-orange-500" : "bg-gray-300"
+            }`}
           >
             {badge.completed && (
               <Check className="w-5 h-5 text-white flex-shrink-0" strokeWidth={3} />
@@ -23,5 +32,5 @@ export default function ProgressCard() {
         Coletar
       </button>
     </div>
-  )
+  );
 }
