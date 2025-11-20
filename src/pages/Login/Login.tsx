@@ -4,12 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { Input } from "../../components/login/Input";
 import { loginSchema, type LoginFormData } from "../../schema/login.schema";
 import Wrapper from "../../components/general/Wrapper";
-
+import { useAuth } from "../../hooks/useAuth"; // ⬅ IMPORTANTE
 import Cajuzinho from "../../assets/images/login/cajuzinho.png";
 import Nutra from "../../assets/images/login/logofinal1.png";
 
 export default function LoginForm() {
   const navigate = useNavigate();
+
+  const { login } = useAuth(); 
 
   const {
     register,
@@ -21,7 +23,10 @@ export default function LoginForm() {
 
   const onSubmit = async (data: LoginFormData) => {
     console.log("Tentativa de login:", data);
-    navigate("/");
+
+    await login(data.email, data.password); 
+
+    navigate("/"); 
   };
 
   const handleGmailLogin = () => {
@@ -29,7 +34,7 @@ export default function LoginForm() {
   };
 
   const handleForgotPassword = () => {
-    navigate("/esquecisenha"); // se der tempo, farei esta página
+    navigate("/esquecisenha");
   };
 
   return (
