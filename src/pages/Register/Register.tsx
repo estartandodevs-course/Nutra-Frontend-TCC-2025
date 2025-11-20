@@ -31,9 +31,13 @@ export default function RegisterPage() {
       alert("Conta criada com sucesso!");
       navigate("/login");
 
-    } catch (error: any) {
+    } catch (error: unknown) {
+      if (error instanceof Error) {
       alert(error.message);
-    }
+    } else {
+      alert("Erro inesperado ao registrar.");
+  }
+ }
   };
 
   return (
