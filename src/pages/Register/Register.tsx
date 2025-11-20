@@ -7,7 +7,9 @@ import Cajuzinho from "../../assets/images/login/cajuzinho.png";
 import Nutra from "../../assets/images/login/logofinal1.png";
 import { registerSchema, type RegisterFormData } from "../../schema/register.schema";
 import { useRegister } from "../../hooks/useRegister";
-import { toast } from "react-hot-toast";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function RegisterPage() {
   const navigate = useNavigate();
@@ -30,19 +32,30 @@ export default function RegisterPage() {
       });
 
       toast.success("Conta criada com sucesso!");
-      navigate("/login");
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 1000);
 
     } catch (error: unknown) {
-      if (error instanceof Error) {
-        toast.error(error.message);
-      } else {
-        toast.error("Erro inesperado ao registrar.");
-      }
+      const message =
+        error instanceof Error ? error.message : "Erro inesperado ao registrar.";
+      toast.error(message);
     }
   };
 
   return (
     <Wrapper>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        draggable
+        pauseOnHover
+      />
+
       <div className="flex flex-col justify-center items-center w-full h-full px-4 sm:px-6 py-8 sm:py-20 relative">
         <img src={Nutra} alt="Logo Nutra" className="w-32 h-auto z-20 mb-25" />
 

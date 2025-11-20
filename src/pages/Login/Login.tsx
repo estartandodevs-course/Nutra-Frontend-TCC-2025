@@ -53,7 +53,6 @@ export default function LoginForm() {
             </div>
           </div>
 
-          {/* Caixa amarela */}
           <div className="w-full max-w-sm relative mt-18">
             <div className="bg-yellow-100/50 rounded-xl shadow-md p-5 pb-7">
               <h2 className="text-xl font-bold text-gray-900 text-center mt-4">
@@ -118,7 +117,6 @@ export default function LoginForm() {
               </button>
             </div>
 
-            {/* Cajuzinho */}
             <img
               src={Cajuzinho}
               alt="decorativa"
