@@ -1,7 +1,7 @@
 import BigNutraLogo from "../../assets/images/splash/Logofinal Big.png"
 import Cajuzao from "../../assets/images/splash/cajuzao.png"
 import { useNavigate } from "react-router-dom"
-import Wrapper from "../../components/general/Wrapper"
+import Wrapper from "../../components/General/Wrapper"
 
 export default function WelcomePage() {
   const navigate = useNavigate()

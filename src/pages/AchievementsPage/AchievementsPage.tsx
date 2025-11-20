@@ -1,12 +1,12 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import Wrapper from "../../components/general/Wrapper"
-import HeaderAchievement from "../../components/milestones/HeaderAchievement"
-import UserProfileAchievement from "../../components/milestones/UserProfileAchievement"
-import Achievement from "../../components/milestones/Achievement"
-import Rankings from "../../components/milestones/Ranking"
-import BottomNav from "../../components/general/BottomNav"
-import Tabs from "../../components/milestones/Tabs"
+import Wrapper from "../../components/General/Wrapper"
+import HeaderAchievement from "../../components/Milestones/HeaderAchievement"
+import UserProfileAchievement from "../../components/Milestones/UserProfileAchievement"
+import Achievement from "../../components/Milestones/Achievement"
+import Rankings from "../../components/Milestones/Ranking"
+import BottomNav from "../../components/General/BottomNav"
+import Tabs from "../../components/Milestones/Tabs"
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"progress" | "achievements">(

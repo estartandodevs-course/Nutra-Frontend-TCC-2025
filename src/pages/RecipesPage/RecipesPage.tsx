@@ -1,7 +1,7 @@
-import Wrapper from "../../components/general/Wrapper"
-import { RecipesHeader }  from "../../components/recipes/HeaderRecipe"
-import { RecipeCard } from "../../components/recipes/RecipeCard"
-import  BottomNav  from "../../components/general/BottomNav"
+import Wrapper from "../../components/General/Wrapper"
+import { RecipesHeader }  from "../../components/Recipes/HeaderRecipe"
+import { RecipeCard } from "../../components/Recipes/RecipeCard"
+import  BottomNav  from "../../components/General/BottomNav"
 import { recipes } from "../../mocks/recipes";
 
 export default function RecipesPage() {

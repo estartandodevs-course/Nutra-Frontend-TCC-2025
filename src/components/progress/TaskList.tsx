@@ -1,5 +1,5 @@
 import { useTasks } from "../../hooks/useTask";
-import TaskItem from "../progress/TaskItem";
+import TaskItem from "./TaskItem";
 
 export default function TasksList() {
   const { tasks } = useTasks();
