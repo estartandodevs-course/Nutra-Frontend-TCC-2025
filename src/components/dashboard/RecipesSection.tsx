@@ -5,7 +5,7 @@ export default function RecipesSection() {
     <div className="space-y-3 text-center">
       <div className="flex justify-between items-center px-2">
         <h3 className="text-sm font-semibold text-gray-900">Receitas</h3>
-        <a href="#" className="text-xs text-orange-500 font-medium">
+        <a href="/receitas" className="text-xs text-orange-500 font-medium">
           Ver todas as receitas →
         </a>
       </div>
