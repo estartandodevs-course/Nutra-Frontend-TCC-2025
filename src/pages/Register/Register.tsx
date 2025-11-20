@@ -6,11 +6,12 @@ import Wrapper from "../../components/general/Wrapper";
 import Cajuzinho from "../../assets/images/login/cajuzinho.png";
 import Nutra from "../../assets/images/login/logofinal1.png";
 import { registerSchema, type RegisterFormData } from "../../schema/register.schema";
-import { useRegister } from "../../hooks/useRegister"; 
+import { useRegister } from "../../hooks/useRegister";
+import { toast } from "react-hot-toast";
 
 export default function RegisterPage() {
   const navigate = useNavigate();
-  const { registerUser, loading } = useRegister(); 
+  const { registerUser, loading } = useRegister();
 
   const {
     register,
@@ -28,16 +29,16 @@ export default function RegisterPage() {
         password: data.password,
       });
 
-      alert("Conta criada com sucesso!");
+      toast.success("Conta criada com sucesso!");
       navigate("/login");
 
     } catch (error: unknown) {
       if (error instanceof Error) {
-      alert(error.message);
-    } else {
-      alert("Erro inesperado ao registrar.");
-  }
- }
+        toast.error(error.message);
+      } else {
+        toast.error("Erro inesperado ao registrar.");
+      }
+    }
   };
 
   return (
