@@ -19,7 +19,7 @@ export default function RecipeDetailsPage() {
           </h2>
           <button
             onClick={() => navigate(-1)}
-            className="mt-6 px-5 py-2.5 bg-orange-500 text-white font-medium rounded-lg hover:bg-orange-600 transition"
+            className="mt-6 px-5 py-2.5 bg-orange-500 text-white font-medium rounded-lg hover:bg-orange-600 transition cursor-pointer"
           >
             Voltar
           </button>
@@ -75,7 +75,7 @@ export default function RecipeDetailsPage() {
         <div className="px-4 pb-6">
           <button
             onClick={() => navigate(-1)}
-            className="w-full py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors"
+            className="w-full py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors cursor-pointer"
           >
             Voltar
           </button>
