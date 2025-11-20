@@ -8,6 +8,8 @@ import { useAuth } from "../../hooks/useAuth";
 import Cajuzinho from "../../assets/images/login/cajuzinho.png";
 import Nutra from "../../assets/images/login/logofinal1.png";
 import { ChevronLeft } from "lucide-react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -22,43 +24,42 @@ export default function LoginForm() {
   });
 
   const onSubmit = async (data: LoginFormData) => {
-    await login(data.email, data.password);
-    navigate("/");
-  };
+    try {
+      await login(data.email, data.password);
 
-  const handleGmailLogin = () => {
-    console.log("Tentativa de login com o Gmail");
-  };
-
-  const handleForgotPassword = () => {
-    navigate("/esquecisenha");
+      toast.success("Login realizado com sucesso!");
+      setTimeout(() => navigate("/"), 600);
+    } catch (err: unknown) {
+      const errorMessage =
+        err instanceof Error ? err.message : "Email/Senha inválidos!";
+      toast.error(errorMessage);
+    }
   };
 
   return (
     <>
-      {/* BOTÃO FIXO FORA DO WRAPPER */}
-      <button
-        onClick={() => navigate("/choices")}
-        className="fixed top-6 left-4 z-[99999] p-2"
-      >
-        <ChevronLeft size={24} className="text-gray-700" />
-      </button>
-
       <Wrapper>
-        <div className="flex flex-col justify-center items-center w-full h-full px-6 py-8 relative">
-          <img
-            src={Nutra}
-            alt="Logo"
-            className="w-32 h-auto z-20 mb-30"
-          />
+        <div className="flex flex-col items-center justify-start w-full h-full px-6 pt-10 relative">
+          <div className="w-full max-w-sm relative mb-6 mt-14 flex items-center">
+            <button
+              onClick={() => navigate("/choices")}
+              className="absolute left-0 p-2 cursor-pointer"
+            >
+              <ChevronLeft size={26} className="text-gray-700" />
+            </button>
 
-          <div className="w-full max-w-sm relative mb-16">
-            <div className="bg-yellow-100/50 rounded-xl shadow-md p-4">
-              <h2 className="text-xl font-bold text-gray-900 text-center mt-10">
+            <div className="flex justify-center w-full">
+              <img src={Nutra} alt="Logo" className="w-32 h-auto" />
+            </div>
+          </div>
+
+          <div className="w-full max-w-sm relative mt-18">
+            <div className="bg-yellow-100/50 rounded-xl shadow-md p-5 pb-7">
+              <h2 className="text-xl font-bold text-gray-900 text-center mt-4">
                 Login
               </h2>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 mt-4">
                 <Input
                   name="email"
                   type="email"
@@ -77,10 +78,10 @@ export default function LoginForm() {
                   error={errors.password?.message}
                 />
 
-                <div className="text-right">
+                <div className="text-right -mt-1">
                   <button
                     type="button"
-                    onClick={handleForgotPassword}
+                    onClick={() => navigate("/esquecisenha")}
                     className="text-sm text-orange-600 hover:text-orange-700 font-medium"
                   >
                     Esqueceu sua senha?
@@ -109,8 +110,8 @@ export default function LoginForm() {
 
               <button
                 type="button"
-                onClick={handleGmailLogin}
-                className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-lg transition duration-200 flex items-center justify-center gap-2"
+                onClick={() => toast.info("Login com Google ainda não implementado")}
+                className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-lg transition duration-200"
               >
                 Gmail
               </button>
@@ -124,6 +125,8 @@ export default function LoginForm() {
           </div>
         </div>
       </Wrapper>
+
+      <ToastContainer position="top-center" autoClose={2000} />
     </>
   );
 }
