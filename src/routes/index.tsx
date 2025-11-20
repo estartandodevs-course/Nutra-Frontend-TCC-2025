@@ -12,22 +12,23 @@ import ChoicesPage from "../pages/ChoicesPage/ChoicesPage";
 import TreePage from "../pages/TreePage/TreePage";
 import ProgressPage from "../pages/ProgressPage/ProgressPage";
 import Menu from "../pages/ModalMenu/ModalMenu";
+import Home from "../pages/Home/Home";
 
 const NotFound = () => <div>Página não encontrada</div>;
 
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path={PATHS.HOME} element={<SplashPage />}  /> {/* Na verdade é <Home />, mas vou deixar essa págima como Home por enquanto */}
+      <Route path={PATHS.SPLASH} element={<SplashPage />} />
+      <Route path={PATHS.WELCOME} element={<WelcomePage />} />
+      <Route path={PATHS.CHOICES} element={<ChoicesPage />} />
+      <Route path={PATHS.LOGIN} element={<LoginPage />} />
+      <Route path={PATHS.REGISTER} element={<RegisterPage />} />
       <Route path={PATHS.QUIZ} element={<ModalScreen />} />
+      <Route path={PATHS.HOME} element={<Home />}  /> 
       <Route path={PATHS.ACHIEVEMENTS} element={<AchievementsPage />} />
       <Route path={PATHS.RECIPES} element={<RecipesPage />} />
       <Route path={PATHS.RECIPE_DETAILS} element={<RecipeDetailsPage />} />
-      <Route path={PATHS.LOGIN} element={<LoginPage />} />
-      <Route path={PATHS.SPLASH} element={<SplashPage />} />
-      <Route path={PATHS.WELCOME} element={<WelcomePage />} />
-      <Route path={PATHS.REGISTER} element={<RegisterPage />} />
-      <Route path={PATHS.CHOICES} element={<ChoicesPage />} />
       <Route path={PATHS.PLANT_TREE} element={<TreePage />} />
       <Route path={PATHS.PROGRESS} element={<ProgressPage />} />
       <Route path={PATHS.MENU} element={<Menu />} />
