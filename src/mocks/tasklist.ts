@@ -19,7 +19,7 @@ export const TASKS: Task[] = [
   },
   {
     id: 'exercise',
-    title: 'Fazer 10 exercícios',
+    title: 'Fazer 3 exercícios (com supervisão de profissional)',
     icon: '🏃',
     current: 5,
     total: 10,
