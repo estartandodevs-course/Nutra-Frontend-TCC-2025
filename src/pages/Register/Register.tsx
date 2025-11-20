@@ -42,7 +42,7 @@ export default function RegisterPage() {
 
   return (
     <Wrapper>
-      <div className="flex flex-col justify-center items-center w-full h-full px-4 sm:px-6 py-8 relative">
+      <div className="flex flex-col justify-center items-center w-full h-full px-4 sm:px-6 py-8 sm:py-20 relative">
         <img src={Nutra} alt="Logo Nutra" className="w-32 h-auto z-20 mb-25" />
 
         <div className="w-full max-w-sm relative mb-16">
