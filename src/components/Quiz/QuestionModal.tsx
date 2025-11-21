@@ -12,11 +12,21 @@ export default function QuestionModal({
 }: QuestionModalProps) {
   const selectedAnswer = answers[question.id];
 
+  const isNextDisabled = selectedAnswer === undefined || selectedAnswer === null;
+
   return (
     <div className="w-full max-w-sm mx-auto">
       <div className="bg-yellow-100 rounded-xl shadow-md p-4 mb-2">
         <div className="flex items-center justify-center gap-2 h-12">
-          <span className="text-2xl">{question.emoji}</span>
+
+          {question.image && (
+            <img
+              src={question.image}
+              alt="Ícone da pergunta"
+              className="w-10 h-10 object-contain"
+            />
+          )}
+
           <h2 className="text-sm font-semibold text-orange-700">
             Vamos conhecer o seu perfil!
           </h2>
@@ -33,6 +43,7 @@ export default function QuestionModal({
         <div className="flex flex-col gap-3">
           {question.options?.map((option, index) => {
             const isSelected = selectedAnswer === index;
+
             return (
               <button
                 key={index}
@@ -51,16 +62,24 @@ export default function QuestionModal({
       </div>
 
       <div className="flex flex-col gap-3">
+
         <button
           onClick={onNext}
-          className="w-full bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600"
+          disabled={isNextDisabled}
+          className={`w-full font-bold py-2 px-4 rounded-lg transition cursor-pointer
+            ${
+              isNextDisabled
+                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : "bg-orange-500 text-white hover:bg-orange-600"
+            }
+          `}
         >
           Próximo →
         </button>
 
         <button
           onClick={onBack}
-          className="w-full border-2 border-orange-500 text-orange-600 font-bold py-2 px-4 rounded-lg hover:bg-orange-50"
+          className="w-full border-2 border-orange-500 text-orange-600 font-bold py-2 px-4 rounded-lg hover:bg-orange-50 cursor-pointer"
         >
           ← Voltar
         </button>
