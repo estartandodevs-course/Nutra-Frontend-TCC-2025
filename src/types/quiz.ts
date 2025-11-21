@@ -1,7 +1,7 @@
 export interface Question {
   id: number
   question: string
-  emoji: string
+  image?: string
   description?: string
   type?: string
   options?: string[]

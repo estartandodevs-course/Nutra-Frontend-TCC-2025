@@ -1,24 +1,8 @@
 import { X } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
+import type { MenuModalProps } from '../../types/menumodal';
+import { menuItems } from '../../mocks/menuitems';
 
-export interface MenuModalProps {
-  profileName: string;
-  profileRole: string;
-  profileImage?: string;
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-const menuItems = [
-  { label: 'Início', href: '/' },
-  { label: 'Minha Horta', href: '/tree' },
-  { label: 'Minhas conquistas', href: '/conquistas' },
-  { label: 'Jogos', href: '/' },
-  { label: 'Vídeos', href: '/' },
-  { label: 'Experimentos', href: '/' },
-  { label: 'Meu Progresso', href: '/progress' },
-  { label: 'Desafio diário', href: '/' },
-];
 
 export default function MenuModal({
   profileName,
@@ -45,7 +29,7 @@ export default function MenuModal({
   return (
     <>
       <div
-        className="fixed inset-0 bg-black/50 z-40"
+        className="fixed inset-0 bg-black/50"
         onClick={closeAndGoDashboard}
         aria-hidden="true"
       />
@@ -88,7 +72,7 @@ export default function MenuModal({
 
           <button
             onClick={closeAndGoDashboard}
-            className="mx-auto flex items-center justify-center w-16 h-16 rounded-full border-3 border-white hover:bg-white/20 transition-colors"
+            className="mx-auto flex items-center justify-center w-16 h-16 rounded-full border-3 border-white hover:bg-white/20 transition-colors cursor-pointer"
           >
             <X className="w-8 h-8 stroke-3" />
           </button>

@@ -28,7 +28,7 @@ export default function LoginForm() {
       await login(data.email, data.password);
 
       toast.success("Login realizado com sucesso!");
-      setTimeout(() => navigate("/dashboard"), 4000);
+      setTimeout(() => navigate("/quiz"), 4000);
     } catch (err: unknown) {
       const errorMessage =
         err instanceof Error ? err.message : "Email/Senha inválidos!";
