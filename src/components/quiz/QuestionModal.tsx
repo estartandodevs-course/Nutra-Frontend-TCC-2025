@@ -1,4 +1,4 @@
-import ProgressBar from "./Progressbar";
+import ProgressBar from "../Quiz/Progressbar";
 import type { QuestionModalProps } from "../../types/quiz";
 
 export default function QuestionModal({
