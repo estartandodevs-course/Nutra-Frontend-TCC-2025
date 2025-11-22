@@ -27,7 +27,7 @@ export default function ProgressPage() {
               z-40 pointer-events-none
             "
             style={{
-              top: user ? undefined : "160px",
+              top: user ? undefined : "110px",
             }}
           >
             <img src={Uva} alt="Uva" className="w-24 h-auto pointer-events-auto" />

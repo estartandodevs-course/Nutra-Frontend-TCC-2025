@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // 
+import { useNavigate } from "react-router-dom"; 
 import Wrapper from "../../components/General/Wrapper";
 import QuizModal from "../../components/Quiz/QuizModal";
 import { quizData } from "../../data/quizdata";
@@ -7,13 +7,10 @@ import { quizData } from "../../data/quizdata";
 export default function QuizPage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleSelecionaResposta = (questaoId: number, respostaIndex: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [questaoId]: respostaIndex,
-    }));
+    setAnswers((prev) => ({ ...prev, [questaoId]: respostaIndex }));
   };
 
   const handleSeguinte = () => {
