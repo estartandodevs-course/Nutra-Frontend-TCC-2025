@@ -2,7 +2,7 @@ import type { ProgressBarProps } from "../../types/quiz";
 
 export default function ProgressBar({ current, total }: ProgressBarProps) {
   return (
-    <div className="w-full max-w-sm mx-auto mb-3 px-[6px]">
+    <div className="w-full max-w-sm mx-auto mb-3 px-2">
       <div className="flex items-center justify-between mb-4 mt-4">
         {Array.from({ length: total }).map((_, index) => {
           const estaFeito = index < current - 1;

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import type { MenuModalProps } from '../../types/menumodal';
 import { menuItems } from '../../mocks/menuitems';
 
-
 export default function MenuModal({
   profileName,
   profileRole,
@@ -16,7 +15,7 @@ export default function MenuModal({
 
   if (!isOpen) return null;
 
-  const closeAndGoDashboard = () => {
+  const handleClose = () => {
     onClose();
     navigate("/dashboard");
   };
@@ -29,15 +28,25 @@ export default function MenuModal({
   return (
     <>
       <div
-        className="fixed inset-0 bg-black/50"
-        onClick={closeAndGoDashboard}
+        className="fixed inset-0 bg-black/50 z-40"
+        onClick={handleClose}
         aria-hidden="true"
       />
 
-      <div className="fixed inset-0 z-50 flex items-end md:items-center md:justify-center">
-        <div className="w-full md:max-w-sm bg-gradient-to-b from-orange-500 to-orange-600 rounded-3xl p-8 text-center text-white shadow-2xl max-h-[90vh] overflow-y-auto mx-0 md:mx-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-0">
+        <div
+          className="w-full max-w-full md:max-w-sm bg-gradient-to-b from-orange-500 to-orange-600 rounded-3xl p-8 text-center text-white shadow-2xl max-h-[90vh] overflow-y-auto mx-0 md:mx-auto relative"
+          style={{ marginBottom: '70px' }}
+        >
 
-          <div className="mb-8">
+          <button
+            onClick={handleClose} 
+            className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center bg-white/20 hover:bg-white/30 transition-colors cursor-pointer"
+          >
+            <X className="w-6 h-6 stroke-2" />
+          </button>
+
+          <div className="mb-8 mt-6">
             <div className="flex justify-center mb-6">
               <div className="w-24 h-24 rounded-full border-4 border-white overflow-hidden flex-shrink-0 bg-white">
                 {profileImage ? (
@@ -70,12 +79,6 @@ export default function MenuModal({
             ))}
           </nav>
 
-          <button
-            onClick={closeAndGoDashboard}
-            className="mx-auto flex items-center justify-center w-16 h-16 rounded-full border-3 border-white hover:bg-white/20 transition-colors cursor-pointer"
-          >
-            <X className="w-8 h-8 stroke-3" />
-          </button>
         </div>
       </div>
     </>
