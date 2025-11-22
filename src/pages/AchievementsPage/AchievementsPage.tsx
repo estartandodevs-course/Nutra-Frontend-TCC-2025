@@ -19,8 +19,13 @@ export default function Home() {
     <>
       <Wrapper>
         <HeaderAchievement />
-        <main className="flex-1 overflow-y-auto px-4 py-6 pb-16">
-          <UserProfileAchievement name="Henrique" level={3} points={500} />
+
+        <main className="flex-1 overflow-y-auto px-4 pb-20 pt-24 w-full max-w-md mx-auto">
+          <UserProfileAchievement 
+            name="Henrique" 
+            level={3} 
+            points={500} 
+          />
 
           <Tabs
             activeTab={activeTab}
@@ -40,6 +45,7 @@ export default function Home() {
             </div>
           )}
         </main>
+
       </Wrapper>
 
       <BottomNav />

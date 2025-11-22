@@ -10,7 +10,7 @@ export default function BottomNav() {
           
           <button
             className="flex flex-col items-center justify-center w-16 h-16 text-white cursor-pointer"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/dashboard")}
           >
             <Home size={24} />
             <span className="font-fredoka text-[16px] whitespace-nowrap">Inicio</span>

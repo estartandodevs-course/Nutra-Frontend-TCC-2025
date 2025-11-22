@@ -12,8 +12,8 @@ export default function Home() {
     <>
       <Wrapper>
         <Header />
-        <main className="flex flex-col flex-1 overflow-y-auto pb-20 mt-10">
-          <div className="px-4 py-2 space-y-6">
+        <main className="flex flex-col flex-1 overflow-y-auto pb-20 mt-20">
+          <div className="px-4 py-2 space-y-6 mt-4">
             <DailyChallenge />
             <VideoSection />
             <GamesSection />
