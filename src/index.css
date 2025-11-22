@@ -5,12 +5,43 @@
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; 
     overscroll-behavior: none;
+
+    scrollbar-width: thin;
+    scrollbar-color: #f97316 transparent;
   }
 
   body {
     font-size: 16px;
-    background-color: #f9fafb;
+    background-color: rgba(0,0,0,0.5) !important;
   }
+}
+
+#root {
+  background-color: rgba(0,0,0,0.5) !important;
+}
+
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 8px;
+  min-height: 10px; 
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f97316 transparent;
 }
