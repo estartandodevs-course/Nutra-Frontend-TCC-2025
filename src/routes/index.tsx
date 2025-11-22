@@ -1,4 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import PageWrapper from "../../src/components/General/Transition"; 
+
 import { PATHS } from "./path";
 import ModalScreen from "../pages/ModalScreen/ModalScreen";
 import AchievementsPage from "../pages/AchievementsPage/AchievementsPage";
@@ -17,22 +20,29 @@ import Home from "../pages/Home/Home";
 const NotFound = () => <div>Página não encontrada</div>;
 
 export default function AppRoutes() {
+  const location = useLocation();
+
   return (
-    <Routes>
-      <Route path={PATHS.SPLASH} element={<SplashPage />} />
-      <Route path={PATHS.WELCOME} element={<WelcomePage />} />
-      <Route path={PATHS.CHOICES} element={<ChoicesPage />} />
-      <Route path={PATHS.LOGIN} element={<LoginPage />} />
-      <Route path={PATHS.REGISTER} element={<RegisterPage />} />
-      <Route path={PATHS.QUIZ} element={<ModalScreen />} />
-      <Route path={PATHS.HOME} element={<Home />}  /> 
-      <Route path={PATHS.ACHIEVEMENTS} element={<AchievementsPage />} />
-      <Route path={PATHS.RECIPES} element={<RecipesPage />} />
-      <Route path={PATHS.RECIPE_DETAILS} element={<RecipeDetailsPage />} />
-      <Route path={PATHS.PLANT_TREE} element={<TreePage />} />
-      <Route path={PATHS.PROGRESS} element={<ProgressPage />} />
-      <Route path={PATHS.MENU} element={<Menu />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+
+        <Route path={PATHS.SPLASH} element={<PageWrapper><SplashPage /></PageWrapper>} />
+        <Route path={PATHS.WELCOME} element={<PageWrapper><WelcomePage /></PageWrapper>} />
+        <Route path={PATHS.CHOICES} element={<PageWrapper><ChoicesPage /></PageWrapper>} />
+        <Route path={PATHS.LOGIN} element={<PageWrapper><LoginPage /></PageWrapper>} />
+        <Route path={PATHS.REGISTER} element={<PageWrapper><RegisterPage /></PageWrapper>} />
+        <Route path={PATHS.QUIZ} element={<PageWrapper><ModalScreen /></PageWrapper>} />
+        <Route path={PATHS.HOME} element={<PageWrapper><Home /></PageWrapper>} />
+        <Route path={PATHS.ACHIEVEMENTS} element={<PageWrapper><AchievementsPage /></PageWrapper>} />
+        <Route path={PATHS.RECIPES} element={<PageWrapper><RecipesPage /></PageWrapper>} />
+        <Route path={PATHS.RECIPE_DETAILS} element={<PageWrapper><RecipeDetailsPage /></PageWrapper>} />
+        <Route path={PATHS.PLANT_TREE} element={<PageWrapper><TreePage /></PageWrapper>} />
+        <Route path={PATHS.PROGRESS} element={<PageWrapper><ProgressPage /></PageWrapper>} />
+        <Route path={PATHS.MENU} element={<PageWrapper><Menu /></PageWrapper>} />
+
+        <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
+
+      </Routes>
+    </AnimatePresence>
   );
 }
