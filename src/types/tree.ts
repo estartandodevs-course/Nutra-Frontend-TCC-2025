@@ -35,4 +35,3 @@ export interface ShopSectionProps {
   onBuyItem: (cost: number) => void
   points: number
 }
-
