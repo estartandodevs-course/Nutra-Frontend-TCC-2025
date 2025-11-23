@@ -15,7 +15,7 @@ export default function QuestionModal({
 
   return (
     <div className="w-full max-w-sm md:max-w-md mx-auto p-2 md:p-4">
-      <div className="bg-yellow-100 rounded-xl shadow-md p-4 mb-2 flex items-center justify-center gap-2 h-12">
+      <div className="bg-yellow-100 rounded-xl shadow-md p-8 mb-2 flex items-center justify-center gap-2 h-12">
         {question.image && (
           <img
             src={question.image}
