@@ -14,7 +14,6 @@ import RegisterPage from "../pages/Register/Register";
 import ChoicesPage from "../pages/ChoicesPage/ChoicesPage";
 import TreePage from "../pages/TreePage/TreePage";
 import ProgressPage from "../pages/ProgressPage/ProgressPage";
-import Menu from "../pages/ModalMenu/ModalMenu";
 import Home from "../pages/Home/Home";
 
 const NotFound = () => <div>Página não encontrada</div>;
@@ -38,7 +37,6 @@ export default function AppRoutes() {
         <Route path={PATHS.RECIPE_DETAILS} element={<PageWrapper><RecipeDetailsPage /></PageWrapper>} />
         <Route path={PATHS.PLANT_TREE} element={<PageWrapper><TreePage /></PageWrapper>} />
         <Route path={PATHS.PROGRESS} element={<PageWrapper><ProgressPage /></PageWrapper>} />
-        <Route path={PATHS.MENU} element={<PageWrapper><Menu /></PageWrapper>} />
 
         <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
 
