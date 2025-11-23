@@ -2,7 +2,7 @@ import { BrowserRouter, useLocation } from "react-router-dom";
 import AppRoutes from "./routes";
 import BottomNav from "./components/General/BottomNav";
 import MenuModal from "./components/Menu/MenuModal";
-import { MenuModalProvider } from "./context/MenuModalContext";
+import { MenuModalProvider } from "./providers/MenuModalProvider"; 
 import { useMenuModal } from "./hooks/useMenuModal";
 import { PATHS } from "./routes/path";
 
