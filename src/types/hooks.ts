@@ -8,17 +8,22 @@ export interface Task {
 }
 
 export interface User {
-  name: string;
+  id: number;
+  name?: string;   
+  nome?: string;   
   email: string;
-  password: string;
+  password?: string;
+  turma?: string;
   role?: string;
   level?: number;
   xp?: number;
   tasks?: Task[];
+  tipo: string;
 }
 
 export interface RegisterUser {
   name: string;
   email: string;
   password: string;
+  turma?: string;
 }

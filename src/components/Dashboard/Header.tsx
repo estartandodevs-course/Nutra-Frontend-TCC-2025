@@ -1,21 +1,8 @@
-import { useEffect, useState } from "react";
 import { Bell, Settings } from "lucide-react";
-import type { User } from "../../types/hooks";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function Header() {
-  const [userName, setUserName] = useState<string>("");
-
-  useEffect(() => {
-    const savedUser = localStorage.getItem("loggedUser");
-    if (savedUser) {
-      try {
-        const user: User = JSON.parse(savedUser);
-        setUserName(user.name || "Usuário");
-      } catch {
-        setUserName("Usuário");
-      }
-    }
-  }, []);
+  const { user } = useAuth();
 
   return (
     <header
@@ -30,8 +17,9 @@ export default function Header() {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-gray-300"></div>
+
           <p className="text-sm font-semibold text-gray-900">
-            Olá, {userName}
+            Olá, {user?.name ?? "Usuário"}
           </p>
         </div>
 
