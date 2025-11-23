@@ -30,9 +30,9 @@ export default function ProgressPage() {
               top: user ? undefined : "110px",
             }}
           >
-            <img src={Uva} alt="Uva" className="w-24 h-auto pointer-events-auto" />
-            <img src={Cajuzinho} alt="Cajuzinho" className="w-24 h-auto pointer-events-auto" />
-            <img src={Brocolis} alt="Brócolis" className="w-24 h-auto pointer-events-auto" />
+            <img src={Uva} alt="Uva" className="w-24 h-22.5 pointer-events-auto" />
+            <img src={Cajuzinho} alt="Cajuzinho" className="w-24 h-22 pointer-events-auto" />
+            <img src={Brocolis} alt="Brócolis" className="w-24 h-23.5 pointer-events-auto" />
           </div>
 
           <main className="flex-1 overflow-y-auto px-4 pb-20 mt-20">
