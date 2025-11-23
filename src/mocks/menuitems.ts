@@ -1,10 +1,10 @@
 export const menuItems = [
-  { label: 'Início', href: '/' },
+  { label: 'Início', href: '/dashboard' },
   { label: 'Minha Horta', href: '/tree' },
   { label: 'Minhas conquistas', href: '/conquistas' },
-  { label: 'Jogos', href: '/' },
-  { label: 'Vídeos', href: '/' },
-  { label: 'Experimentos', href: '/' },
+  { label: 'Jogos', href: '/dashboard' },
+  { label: 'Vídeos', href: '/dashboard' },
+  { label: 'Experimentos', href: '/dashboard' },
   { label: 'Meu Progresso', href: '/progress' },
-  { label: 'Desafio diário', href: '/' },
+  { label: 'Desafio diário', href: '/progress' },
 ];
