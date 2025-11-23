@@ -1,13 +1,20 @@
+import { useNavigate } from "react-router-dom";
 import { recipes } from "../../mocks/recipes";
 
 export default function RecipesSection() {
+  const navigate = useNavigate();
+
   return (
     <div className="space-y-3 text-center">
       <div className="flex justify-between items-center px-2">
         <h3 className="text-sm font-semibold text-gray-900">Receitas</h3>
-        <a href="/receitas" className="text-xs text-orange-500 font-medium">
+
+        <button
+          onClick={() => navigate("/receitas")}
+          className="text-xs text-orange-500 font-medium cursor-pointer"
+        >
           Ver todas as receitas →
-        </a>
+        </button>
       </div>
 
       <div className="overflow-x-auto pb-2">
