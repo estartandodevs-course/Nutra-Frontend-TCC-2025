@@ -2,7 +2,7 @@ import { BrowserRouter, useLocation } from "react-router-dom";
 import AppRoutes from "./routes";
 import BottomNav from "./components/General/BottomNav";
 import MenuModal from "./components/Menu/MenuModal";
-import { MenuModalProvider} from "./context/MenuModalContext";
+import { MenuModalProvider } from "./context/MenuModalContext";
 import { useMenuModal } from "./hooks/useMenuModal";
 import { PATHS } from "./routes/path";
 
@@ -27,12 +27,12 @@ function ConditionalBottomNavAndMenu() {
     PATHS.PLANT_TREE,
     PATHS.ACHIEVEMENTS,
     PATHS.RECIPES,
-    PATHS.RECIPE_DETAILS, 
+    PATHS.RECIPE_DETAILS,
   ];
 
   const showMenu = dashboardPaths.some((path) => {
     if (path.includes(":")) {
-      const basePath = path.split("/:")[0]; 
+      const basePath = path.split("/:")[0];
       return location.pathname.startsWith(basePath);
     }
     return location.pathname === path;
@@ -48,7 +48,6 @@ function ConditionalBottomNavAndMenu() {
         onClose={closeMenu}
         profileName="Usuário"
         profileRole="Aluno(a)"
-        // profileImage="/placeholder-user.jpg"
       />
     </>
   );

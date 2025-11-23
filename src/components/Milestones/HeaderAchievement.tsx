@@ -1,4 +1,4 @@
-import {  Bell, Settings } from "lucide-react";
+import { ChevronLeft, Bell, Settings } from "lucide-react";
 
 export default function HeaderAchievements() {
   return (
@@ -12,6 +12,12 @@ export default function HeaderAchievements() {
       "
     >
       <div className="flex items-center justify-between">
+        <button
+          className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          aria-label="Voltar"
+        >
+          <ChevronLeft className="w-6 h-6 text-gray-700" />
+        </button>
         <div className="text-lg font-semibold text-gray-900">
           500 pts
         </div>
