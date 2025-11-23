@@ -1,6 +1,6 @@
 import { Home, User, Leaf, Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useMenuModal } from "../../context/MenuModalContext";
+import { useMenuModal } from "../../hooks/useMenuModal";
 
 export default function BottomNav() {
   const navigate = useNavigate();
