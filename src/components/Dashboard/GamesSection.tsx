@@ -26,7 +26,7 @@ export default function GamesSection() {
         </div>
       </div>
 
-      <p className="text-xs text-center text-orange-500 font-medium mt-1">
+      <p className="text-xs text-center text-gray-500 font-medium mt-1">
         Ver todos os jogos →
       </p>
     </div>

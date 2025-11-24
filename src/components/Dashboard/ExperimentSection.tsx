@@ -32,7 +32,7 @@ export default function ExperimentSection() {
         </div>
       </div>
 
-      <p className="text-xs text-center text-orange-500 font-medium mt-1">
+      <p className="text-xs text-center text-gray-700 font-medium mt-1">
         Ver todos os experimentos →
       </p>
     </div>
