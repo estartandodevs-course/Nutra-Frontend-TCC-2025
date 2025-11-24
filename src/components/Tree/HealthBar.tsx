@@ -4,7 +4,7 @@ import type { HealthBarProps } from "../../types/tree"
 
 export default function HealthBar({ label, value, color }: HealthBarProps) {
   return (
-    <div className="w-full">
+    <div className="w-full mt-10">
       <div className="flex justify-between items-center mb-1">
         <span className="text-sm font-semibold text-foreground">{label}</span>
         <span className="text-sm font-bold text-foreground">{Math.round(value)}%</span>

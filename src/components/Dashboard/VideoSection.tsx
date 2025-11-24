@@ -4,7 +4,7 @@ import { videos } from "../../mocks/videos"
 export default function VideoSection() {
   return (
     <div className="space-y-3 text-center">
-      <h3 className="text-sm font-semibold text-gray-900">Vídeos</h3>
+      <h3 className="text-sm font-semibold text-orange-500">Vídeos</h3>
 
       <div className="overflow-x-auto pb-2">
         <div className="flex justify-center sm:justify-start gap-3 min-w-max mx-auto px-2">

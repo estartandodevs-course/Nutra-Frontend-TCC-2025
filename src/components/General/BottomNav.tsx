@@ -15,7 +15,7 @@ export default function BottomNav() {
             <span className="font-fredoka text-[16px] whitespace-nowrap">Inicio</span>
           </button>
 
-          <button onClick={() => navigate("/progress")} className="flex flex-col items-center justify-center w-16 h-16 text-white cursor-pointer">
+          <button onClick={() => navigate("/conquistas")} className="flex flex-col items-center justify-center w-16 h-16 text-white cursor-pointer">
             <User size={24} />
             <span className="font-fredoka text-[16px] whitespace-nowrap">Meu Perfil</span>
           </button>

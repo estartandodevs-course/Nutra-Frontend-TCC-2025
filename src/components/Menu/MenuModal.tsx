@@ -18,20 +18,24 @@ export default function MenuModal({
 
   return (
     <>
-      <div className="fixed inset-0 bg-black/50 z-[999]" aria-hidden="true" />
+      <div
+        className="fixed inset-0 bg-black/50 z-[10000]"
+        aria-hidden="true"
+      />
 
-      <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 md:p-0 pointer-events-none">
+      <div
+        className="fixed inset-0 z-[10001] flex items-center justify-center p-4 md:p-0 pointer-events-none"
+      >
         <div
           className="
             w-full max-w-full md:max-w-sm 
             bg-gradient-to-b from-orange-500 to-orange-600 
             rounded-3xl p-8 text-center text-white 
-            shadow-2xl max-h-[90vh] overflow-y-auto 
+            shadow-2xl max-h?[90vh] overflow-y-auto 
             mx-0 md:mx-auto relative pointer-events-auto
           "
-          style={{ marginBottom: "70px" }}
+          style={{ marginBottom: '70px' }}
         >
-
           <button
             onClick={onClose}
             className="
@@ -42,9 +46,7 @@ export default function MenuModal({
           >
             <X className="w-6 h-6 stroke-2" />
           </button>
-
           <div className="mb-8 mt-6">
-
             <h2 className="text-2xl font-bold mb-1">
               {profileName}
             </h2>
