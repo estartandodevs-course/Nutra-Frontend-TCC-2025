@@ -11,7 +11,7 @@ export function useRegister() {
     setLoading(true);
 
     try {
-      const result = await post("/api/Usuarios", {
+      const result = await post("/Usuarios", {
         email: data.email,
         nome: data.name,
         turma: data.turma,

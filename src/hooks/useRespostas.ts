@@ -12,7 +12,7 @@ export function useRespostas() {
   }) => {
     setLoading(true);
     try {
-      const result = await post("/api/Respostas", data);
+      const result = await post("/Respostas", data);
       if (!result.ok) throw new Error("Falha ao enviar respostas");
       return result.data;
     } finally {
