@@ -5,7 +5,7 @@ import { useApi } from "../../hooks/useAPI";
 
 interface TipoRegistroApi {
   codigo: number;
-  descicao: string; // mantido conforme seu mock
+  descicao: string; 
 }
 
 interface TipoRegistroResponse {
@@ -22,7 +22,6 @@ export default function DailyChallenge() {
     async function loadTipo() {
       try {
         const result = await get("/Registros/Tipos/2", "tipoRegistro2");
-
         const data = result.data as TipoRegistroResponse | null;
 
         if (result.ok && data && data.sucesso && Array.isArray(data.dados)) {
@@ -59,7 +58,7 @@ export default function DailyChallenge() {
         <div className="w-full bg-gray-300 rounded-full h-3">
           <div
             className="bg-yellow-400 h-3 rounded-full transition-all"
-            style={{ width: "50%" }} 
+            style={{ width: "50%" }}
           />
         </div>
 
