@@ -1,21 +1,22 @@
 import { X } from "lucide-react";
-import type { MenuModalProps } from "../../types/menumodal";
+import { useAuth } from "../../hooks/useAuth";
 import { menuItems } from "../../mocks/menuitems";
 import { useNavigate } from "react-router-dom";
 
-export default function MenuModal({
-  profileName,
-  profileRole,
-  isOpen,
-  onClose
-}: MenuModalProps) {
+interface MenuModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   if (!isOpen) return null;
 
   const handleMenuClick = (path: string) => {
-    onClose();          
-    navigate(path);     
+    onClose();
+    navigate(path);
   };
 
   return (
@@ -25,15 +26,13 @@ export default function MenuModal({
         aria-hidden="true"
       />
 
-      <div
-        className="fixed inset-0 z-[10001] flex items-center justify-center p-4 md:p-0 pointer-events-none"
-      >
+      <div className="fixed inset-0 z-[10001] flex items-center justify-center p-4 md:p-0 pointer-events-none">
         <div
           className="
             w-full max-w-full md:max-w-sm 
             bg-gradient-to-b from-orange-500 to-orange-600 
             rounded-3xl p-8 text-center text-white 
-            shadow-2xl max-h?[90vh] overflow-y-auto 
+            shadow-2xl max-h-[90vh] overflow-y-auto 
             mx-0 md:mx-auto relative pointer-events-auto
           "
           style={{ marginBottom: '70px' }}
@@ -51,11 +50,11 @@ export default function MenuModal({
 
           <div className="mb-8 mt-6">
             <h2 className="text-2xl font-bold mb-1">
-              {profileName}
+              {user?.name ?? "Usuário"}
             </h2>
 
             <p className="text-orange-100 text-sm">
-              {profileRole}
+              {user?.role ?? "Aluno(a)"}
             </p>
           </div>
 
@@ -70,7 +69,6 @@ export default function MenuModal({
               </button>
             ))}
           </nav>
-
         </div>
       </div>
     </>
