@@ -4,6 +4,11 @@ import { recipes } from "../../mocks/recipes";
 export default function RecipesSection() {
   const navigate = useNavigate();
 
+
+  const handleRecipeClick = (id: string | number) => {
+    navigate(`/receitas/${id}`);
+  };
+
   return (
     <div className="space-y-3 text-center">
       <div className="flex justify-between items-center px-2">
@@ -22,7 +27,8 @@ export default function RecipesSection() {
           {recipes.map((recipe) => (
             <div
               key={recipe.id}
-              className="w-28 flex flex-col items-center shrink-0"
+              className="w-28 flex flex-col items-center shrink-0 cursor-pointer"
+              onClick={() => handleRecipeClick(recipe.id)}
             >
               <div className="relative bg-gray-200 rounded-lg overflow-hidden h-24 w-full flex items-center justify-center hover:opacity-90 transition">
                 <img
