@@ -54,24 +54,37 @@ O aplicativo estará disponível em http://localhost:5173.
 
 ## 🗂 Estrutura do Projeto
 
+```bash 
 O projeto segue uma arquitetura modular e organizada para facilitar manutenção, escalabilidade e entendimento do código:
 
-├── public/ # Arquivos públicos: ícones, imagens, favicon, assets estáticos
-├── src/
-│ ├── components/ # Componentes reutilizáveis e compartilháveis em toda a aplicação
-│ ├── hooks/ # Custom hooks para lógica compartilhada (ex: useAuth, useApi)
-│ ├── mocks/ # Dados mock para testes e desenvolvimento sem backend
-│ ├── pages/ # Páginas do aplicativo, agrupando componentes por tela
-│ ├── styles/ # Arquivos de estilo globais ou específicos (Tailwind + CSS)
-│ ├── types/ # Tipagens TypeScript para objetos, props e respostas de API
-│ ├── utils/ # Funções utilitárias e helpers
-│ └── main.tsx # Ponto de entrada do aplicativo (renderização React)
-├── package.json # Dependências, scripts e configurações do projeto
-├── tsconfig.json # Configuração do TypeScript
-└── vite.config.ts # Configuração do Vite e plugins
+├── .github/                 # Workflows e templates de CI / GitHub Actions
+├── public/                  # Assets públicos (favicon, imagens, etc)
+├── src/                     # Código-fonte principal
+│   ├── assets/              # Imagens, logos e demais arquivos estáticos importáveis
+│   ├── components/          # Componentes reutilizáveis (UI)
+│   ├── context/             # Context API (autenticação, estado global, etc)
+│   ├── data/                # Dados locais, listas estáticas e configurações
+│   ├── hooks/               # Custom hooks (ex: useAuth, useAPI, useMenuModal)
+│   ├── mocks/               # Dados mock para desenvolvimento sem API
+│   ├── pages/               # Páginas da aplicação agrupadas por rotas
+│   ├── providers/           # Providers globais (tema, sessão, etc)
+│   ├── routes/              # Configuração das rotas da aplicação
+│   ├── schema/              # Schemas de validação (ex: Zod / formulários)
+│   ├── services/            # Serviços de API, axios, chamadas externas
+│   ├── types/               # Tipagens TypeScript (interfaces e types)
+│   └── main.tsx             # Ponto de entrada do app (React + Router)
+│
+├── .gitignore
+├── buildspec.yml            # Pipeline de build/deploy (ex: AWS CodeBuild)
+├── index.html               # Template HTML principal do Vite
+├── package.json             # Dependências e scripts do projeto
+├── package-lock.json        # Lockfile para instalações determinísticas
+├── tsconfig.json            # Configuração TypeScript
+├── tsconfig.app.json
+├── tsconfig.node.json
+├── vite.config.ts           # Configuração e plugins do Vite
+├── README.md                # (este arquivo)
+└── eslint.config.js         # Configuração do ESLint
+```
 
-O app é **responsivo** e possui navegação intuitiva com elementos fixos e modais:
-
-- **Menu inferior fixo:** Navegação rápida entre dashboard, perfil, horta e desafios  
-- **Modal lateral:** Acesso ao menu completo e opções do usuário  
-- **Componentes responsivos:** Adaptáveis para desktop, tablet e mobile  
+O app é **responsivo** e possui navegação intuitiva com elementos fixos e modais.
