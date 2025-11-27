@@ -6,5 +6,5 @@ export const menuItems = [
   { label: 'Vídeos', href: '/dashboard' },
   { label: 'Experimentos', href: '/dashboard' },
   { label: 'Meu Progresso', href: '/progress' },
-  { label: 'Desafio diário', href: '/progress' },
+  { label: 'Desafio diário', href: '/challenge' },
 ];

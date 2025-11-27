@@ -1,24 +1,58 @@
 import { useState } from "react";
-import { useApi } from "./useAPI";
+import { useApi } from "./useAPI"; // Assumindo que useAPI está no mesmo diretório
 
-export function useRespostas() {
-  const { post } = useApi();
-  const [loading, setLoading] = useState(false);
+export interface RespostaItem {
+    idPergunta: number;
+    idOpcao: number;
+    descricao: string;
+}
 
-  const enviarRespostas = async (data: {
+export interface RespostasPayload {
     idUsuario: number;
     idQuestionario: number;
-    respostas: { idPergunta: number; idOpcao: number; descricao: string }[];
-  }) => {
+    respostas: RespostaItem[];
+}
+
+
+export interface PostResponseData {
+    sucesso: boolean;
+    mensagem: string | null;
+}
+
+export function useRespostas() {
+  const { post } = useApi(); 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const enviarRespostas = async (data: RespostasPayload) => { 
     setLoading(true);
+    setError(null);
+
     try {
-      const result = await post("/Respostas", data);
-      if (!result.ok) throw new Error("Falha ao enviar respostas");
-      return result.data;
+      const url = "/api/Respostas";
+      
+      const result = await post(url, data); 
+
+      if (!result.ok) {
+        throw new Error(result.error || "Falha de rede ao enviar respostas.");
+      }
+
+      if (!result.data || !result.data.sucesso) {
+          throw new Error(result.data?.mensagem || "O servidor rejeitou o envio das respostas.");
+      }
+      
+      return result.data; 
+
+    } catch (err: any) {
+      const errorMessage = err.message || "Erro desconhecido durante o envio.";
+      setError(errorMessage);
+      console.error("Erro no envio de respostas:", errorMessage);
+      
+      return null; 
     } finally {
       setLoading(false);
     }
   };
 
-  return { enviarRespostas, loading };
+  return { enviarRespostas, loading, error };
 }
