@@ -88,3 +88,5 @@ O projeto segue uma arquitetura modular e organizada para facilitar manutenção
 ```
 
 O app é **responsivo** e possui navegação intuitiva com elementos fixos e modais.
+
+Em breve, traremos mais features.
