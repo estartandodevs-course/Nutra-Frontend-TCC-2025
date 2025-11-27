@@ -11,6 +11,7 @@ export const PATHS = {
   RECIPE_DETAILS: "/receitas/:id", 
   PLANT_TREE: "/tree",
   PROGRESS: "/progress",
+  CHALLENGE: "/challenge"
 } as const;
 
 export type PathKeys = keyof typeof PATHS;

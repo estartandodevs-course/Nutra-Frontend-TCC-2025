@@ -28,6 +28,7 @@ function ConditionalBottomNavAndMenu() {
     PATHS.ACHIEVEMENTS,
     PATHS.RECIPES,
     PATHS.RECIPE_DETAILS,
+    PATHS.CHALLENGE, 
   ];
 
   const showMenu = dashboardPaths.some((path) => {
