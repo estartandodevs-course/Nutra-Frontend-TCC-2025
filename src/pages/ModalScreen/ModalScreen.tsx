@@ -39,8 +39,7 @@ export default function QuizPage() {
         await enviarRespostas(body);
         alert("Respostas enviadas com sucesso!");
       } catch (error) {
-        console.log(error);
-        alert("Erro ao enviar respostas");
+        console.log(error);;
       }
 
       navigate("/dashboard");
