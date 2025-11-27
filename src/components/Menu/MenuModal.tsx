@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import type { MenuModalProps } from "../../types/menumodal";
 import { menuItems } from "../../mocks/menuitems";
+import { useNavigate } from "react-router-dom";
 
 export default function MenuModal({
   profileName,
@@ -8,12 +9,13 @@ export default function MenuModal({
   isOpen,
   onClose
 }: MenuModalProps) {
+  const navigate = useNavigate();
 
   if (!isOpen) return null;
 
-  const handleMenuClick = (href: string) => {
-    onClose();
-    window.location.href = href;
+  const handleMenuClick = (path: string) => {
+    onClose();          
+    navigate(path);     
   };
 
   return (
@@ -46,6 +48,7 @@ export default function MenuModal({
           >
             <X className="w-6 h-6 stroke-2" />
           </button>
+
           <div className="mb-8 mt-6">
             <h2 className="text-2xl font-bold mb-1">
               {profileName}
@@ -61,7 +64,7 @@ export default function MenuModal({
               <button
                 key={index}
                 onClick={() => handleMenuClick(item.href)}
-                className="text-lg font-semibold hover:text-orange-100 transition-colors"
+                className="text-lg font-semibold hover:text-orange-100 transition-colors cursor-pointer"
               >
                 {item.label}
               </button>

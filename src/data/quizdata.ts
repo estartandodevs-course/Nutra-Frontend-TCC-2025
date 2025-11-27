@@ -6,10 +6,10 @@ export const quizData = [
     question: "Qual a sua idade?",
     image: Cajuzinho,
     options: [
-      "18 anos.",
-      "20 anos.",
-      "24 anos.",
-      "26 ou mais.",
+      "Menos de 11 anos.",
+      "12-14 anos.",
+      "15-17 anos.",
+      "18 ou mais.",
     ]
   },
   {
