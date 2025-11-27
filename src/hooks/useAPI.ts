@@ -41,7 +41,6 @@ export function useApi() {
       }
 
       setError("Erro ao buscar dados.");
-      alert("Erro ao buscar dados da API!");
       return { ok: false, data: null, error: "Erro ao buscar dados." };
     } finally {
       setLoading(false);
@@ -61,7 +60,6 @@ export function useApi() {
       };
     } catch {
       setError("Erro ao enviar dados.");
-      alert("Erro ao enviar dados para a API! Você se conectará de forma local.");
       return { ok: false, data: null, error: "Erro ao enviar dados." };
     } finally {
       setLoading(false);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useApi } from "./useAPI"; // Assumindo que useAPI está no mesmo diretório
+import { useApi } from "./useAPI"; 
 
 export interface RespostaItem {
     idPergunta: number;
