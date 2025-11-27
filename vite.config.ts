@@ -17,6 +17,7 @@ export default defineConfig({
           react: ["react", "react-dom"],
           router: ["react-router-dom"],
           motion: ["framer-motion"],
+          forms: ["react-hook-form"], 
         },
       },
     },

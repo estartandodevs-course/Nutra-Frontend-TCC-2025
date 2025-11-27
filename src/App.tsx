@@ -47,8 +47,6 @@ function ConditionalBottomNavAndMenu() {
       <MenuModal
         isOpen={isMenuOpen}
         onClose={closeMenu}
-        profileName="Usuário"
-        profileRole="Aluno(a)"
       />
     </>
   );

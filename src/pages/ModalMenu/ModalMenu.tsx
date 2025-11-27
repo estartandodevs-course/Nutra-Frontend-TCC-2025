@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import BottomNav from "../../components/General/BottomNav";
 import Wrapper from "../../components/General/Wrapper";
-import MenuModal from '../../components/Menu/MenuModal';
-import type { User } from '../../types/hooks';
+import MenuModal from "../../components/Menu/MenuModal";
+import type { User } from "../../types/hooks";
 
 export default function MenuPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [user, setUser] = useState<User | null>(null);
-
   const location = useLocation();
 
   useEffect(() => {
@@ -35,9 +34,8 @@ export default function MenuPage() {
           <MenuModal
             isOpen={isMenuOpen}
             onClose={() => setIsMenuOpen(false)}
-            profileName={user?.name ?? "Usuário"}
-            profileRole={user?.role ?? "Aluno(a)"}
-            //profileImage={user?.profileImage ?? "/placeholder-user.jpg"}
+            userName={user?.name}
+            userRole={user?.role}
           />
         </div>
       </Wrapper>

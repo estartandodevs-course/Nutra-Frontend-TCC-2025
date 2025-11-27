@@ -6,11 +6,21 @@ import { useNavigate } from "react-router-dom";
 interface MenuModalProps {
   isOpen: boolean;
   onClose: () => void;
+  userName?: string;
+  userRole?: string;
 }
 
-export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
+export default function MenuModal({
+  isOpen,
+  onClose,
+  userName,
+  userRole,
+}: MenuModalProps) {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user: authUser } = useAuth();
+
+  const displayName = userName ?? authUser?.name ?? "Usuário";
+  const displayRole = userRole ?? authUser?.role ?? "Aluno(a)";
 
   if (!isOpen) return null;
 
@@ -21,10 +31,7 @@ export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
 
   return (
     <>
-      <div
-        className="fixed inset-0 bg-black/50 z-[10000]"
-        aria-hidden="true"
-      />
+      <div className="fixed inset-0 bg-black/50 z-[10000]" aria-hidden="true" />
 
       <div className="fixed inset-0 z-[10001] flex items-center justify-center p-4 md:p-0 pointer-events-none">
         <div
@@ -35,7 +42,7 @@ export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
             shadow-2xl max-h-[90vh] overflow-y-auto 
             mx-0 md:mx-auto relative pointer-events-auto
           "
-          style={{ marginBottom: '70px' }}
+          style={{ marginBottom: "70px" }}
         >
           <button
             onClick={onClose}
@@ -49,13 +56,8 @@ export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
           </button>
 
           <div className="mb-8 mt-6">
-            <h2 className="text-2xl font-bold mb-1">
-              {user?.name ?? "Usuário"}
-            </h2>
-
-            <p className="text-orange-100 text-sm">
-              {user?.role ?? "Aluno(a)"}
-            </p>
+            <h2 className="text-2xl font-bold mb-1">{displayName}</h2>
+            <p className="text-orange-100 text-sm">{displayRole}</p>
           </div>
 
           <nav className="flex flex-col items-center space-y-6 mb-10">
